@@ -1,4 +1,4 @@
-namespace ProjetoBase
+namespace ERP_Basico
 {
     internal static class Program
     {
