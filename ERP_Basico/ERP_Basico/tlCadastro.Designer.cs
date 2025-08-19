@@ -46,13 +46,19 @@
             label8 = new Label();
             menuStrip1 = new MenuStrip();
             alterarTipoDeCadastroToolStripMenuItem = new ToolStripMenuItem();
-            clienteToolStripMenuItem = new ToolStripMenuItem();
-            fornecedorToolStripMenuItem = new ToolStripMenuItem();
-            funcionárioToolStripMenuItem = new ToolStripMenuItem();
-            produtoToolStripMenuItem = new ToolStripMenuItem();
+            clientecadToolStripMenuItem = new ToolStripMenuItem();
+            fornecedorcadToolStripMenuItem = new ToolStripMenuItem();
+            funcionáriocadToolStripMenuItem = new ToolStripMenuItem();
+            produtocadToolStripMenuItem = new ToolStripMenuItem();
             button1 = new Button();
             button2 = new Button();
             label9 = new Label();
+            label10 = new Label();
+            label11 = new Label();
+            textBox8 = new TextBox();
+            textBox9 = new TextBox();
+            radioButton1 = new RadioButton();
+            radioButton2 = new RadioButton();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -76,7 +82,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(111, 137);
+            textBox2.Location = new Point(111, 138);
             textBox2.Margin = new Padding(3, 2, 3, 2);
             textBox2.Name = "textBox2";
             textBox2.PlaceholderText = "Insira um Setor";
@@ -86,7 +92,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(16, 140);
+            label2.Location = new Point(16, 141);
             label2.Name = "label2";
             label2.Size = new Size(37, 15);
             label2.TabIndex = 3;
@@ -94,7 +100,7 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(111, 177);
+            textBox3.Location = new Point(111, 185);
             textBox3.Margin = new Padding(3, 2, 3, 2);
             textBox3.Name = "textBox3";
             textBox3.PlaceholderText = "(__) _____-____";
@@ -104,7 +110,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(16, 179);
+            label3.Location = new Point(16, 187);
             label3.Name = "label3";
             label3.Size = new Size(55, 15);
             label3.TabIndex = 5;
@@ -112,7 +118,7 @@
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(111, 220);
+            textBox4.Location = new Point(111, 232);
             textBox4.Margin = new Padding(3, 2, 3, 2);
             textBox4.Name = "textBox4";
             textBox4.PlaceholderText = "___.___.___-__";
@@ -121,7 +127,7 @@
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(111, 312);
+            textBox5.Location = new Point(111, 331);
             textBox5.Margin = new Padding(3, 2, 3, 2);
             textBox5.Name = "textBox5";
             textBox5.PlaceholderText = "Insira um Endereço";
@@ -131,7 +137,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(16, 223);
+            label4.Location = new Point(16, 235);
             label4.Name = "label4";
             label4.Size = new Size(31, 15);
             label4.TabIndex = 8;
@@ -140,7 +146,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(16, 314);
+            label5.Location = new Point(16, 333);
             label5.Name = "label5";
             label5.Size = new Size(59, 15);
             label5.TabIndex = 9;
@@ -149,7 +155,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(16, 269);
+            label6.Location = new Point(16, 283);
             label6.Name = "label6";
             label6.Size = new Size(37, 15);
             label6.TabIndex = 11;
@@ -157,7 +163,7 @@
             // 
             // textBox6
             // 
-            textBox6.Location = new Point(111, 267);
+            textBox6.Location = new Point(111, 281);
             textBox6.Margin = new Padding(3, 2, 3, 2);
             textBox6.Name = "textBox6";
             textBox6.PlaceholderText = "__.___.___/____-__";
@@ -168,7 +174,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(16, 370);
+            label7.Location = new Point(16, 384);
             label7.Name = "label7";
             label7.Size = new Size(117, 15);
             label7.TabIndex = 12;
@@ -177,7 +183,7 @@
             // dateTimePicker1
             // 
             dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(169, 367);
+            dateTimePicker1.Location = new Point(169, 381);
             dateTimePicker1.Margin = new Padding(3, 2, 3, 2);
             dateTimePicker1.MaxDate = new DateTime(2500, 12, 31, 0, 0, 0, 0);
             dateTimePicker1.MinDate = new DateTime(1850, 1, 1, 0, 0, 0, 0);
@@ -216,38 +222,38 @@
             // 
             // alterarTipoDeCadastroToolStripMenuItem
             // 
-            alterarTipoDeCadastroToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clienteToolStripMenuItem, fornecedorToolStripMenuItem, funcionárioToolStripMenuItem, produtoToolStripMenuItem });
+            alterarTipoDeCadastroToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clientecadToolStripMenuItem, fornecedorcadToolStripMenuItem, funcionáriocadToolStripMenuItem, produtocadToolStripMenuItem });
             alterarTipoDeCadastroToolStripMenuItem.Name = "alterarTipoDeCadastroToolStripMenuItem";
             alterarTipoDeCadastroToolStripMenuItem.Size = new Size(147, 20);
             alterarTipoDeCadastroToolStripMenuItem.Text = "Alterar Tipo de Cadastro";
             // 
-            // clienteToolStripMenuItem
+            // clientecadToolStripMenuItem
             // 
-            clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            clienteToolStripMenuItem.Size = new Size(180, 22);
-            clienteToolStripMenuItem.Text = "Cliente";
-            clienteToolStripMenuItem.Click += clienteToolStripMenuItem_Click;
+            clientecadToolStripMenuItem.Name = "clientecadToolStripMenuItem";
+            clientecadToolStripMenuItem.Size = new Size(180, 22);
+            clientecadToolStripMenuItem.Text = "Cliente";
+            clientecadToolStripMenuItem.Click += clientecadToolStripMenuItem_Click;
             // 
-            // fornecedorToolStripMenuItem
+            // fornecedorcadToolStripMenuItem
             // 
-            fornecedorToolStripMenuItem.Name = "fornecedorToolStripMenuItem";
-            fornecedorToolStripMenuItem.Size = new Size(180, 22);
-            fornecedorToolStripMenuItem.Text = "Fornecedor";
-            fornecedorToolStripMenuItem.Click += fornecedorToolStripMenuItem_Click;
+            fornecedorcadToolStripMenuItem.Name = "fornecedorcadToolStripMenuItem";
+            fornecedorcadToolStripMenuItem.Size = new Size(180, 22);
+            fornecedorcadToolStripMenuItem.Text = "Fornecedor";
+            fornecedorcadToolStripMenuItem.Click += fornecedorcadToolStripMenuItem_Click;
             // 
-            // funcionárioToolStripMenuItem
+            // funcionáriocadToolStripMenuItem
             // 
-            funcionárioToolStripMenuItem.Name = "funcionárioToolStripMenuItem";
-            funcionárioToolStripMenuItem.Size = new Size(180, 22);
-            funcionárioToolStripMenuItem.Text = "Funcionário";
-            funcionárioToolStripMenuItem.Click += funcionárioToolStripMenuItem_Click;
+            funcionáriocadToolStripMenuItem.Name = "funcionáriocadToolStripMenuItem";
+            funcionáriocadToolStripMenuItem.Size = new Size(180, 22);
+            funcionáriocadToolStripMenuItem.Text = "Funcionário";
+            funcionáriocadToolStripMenuItem.Click += funcionáriocadToolStripMenuItem_Click;
             // 
-            // produtoToolStripMenuItem
+            // produtocadToolStripMenuItem
             // 
-            produtoToolStripMenuItem.Name = "produtoToolStripMenuItem";
-            produtoToolStripMenuItem.Size = new Size(180, 22);
-            produtoToolStripMenuItem.Text = "Produto";
-            produtoToolStripMenuItem.Click += produtoToolStripMenuItem_Click;
+            produtocadToolStripMenuItem.Name = "produtocadToolStripMenuItem";
+            produtocadToolStripMenuItem.Size = new Size(180, 22);
+            produtocadToolStripMenuItem.Text = "Produto";
+            produtocadToolStripMenuItem.Click += produtocadToolStripMenuItem_Click;
             // 
             // button1
             // 
@@ -275,11 +281,65 @@
             label9.AutoSize = true;
             label9.FlatStyle = FlatStyle.Popup;
             label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(16, 29);
+            label9.Location = new Point(16, 33);
             label9.Name = "label9";
             label9.Size = new Size(16, 15);
             label9.TabIndex = 19;
             label9.Text = "...";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(289, 185);
+            label10.Name = "label10";
+            label10.Size = new Size(50, 15);
+            label10.TabIndex = 20;
+            label10.Text = "Usuário:";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(289, 232);
+            label11.Name = "label11";
+            label11.Size = new Size(42, 15);
+            label11.TabIndex = 21;
+            label11.Text = "Senha:";
+            // 
+            // textBox8
+            // 
+            textBox8.Location = new Point(355, 182);
+            textBox8.Name = "textBox8";
+            textBox8.Size = new Size(267, 23);
+            textBox8.TabIndex = 22;
+            // 
+            // textBox9
+            // 
+            textBox9.Location = new Point(355, 229);
+            textBox9.Name = "textBox9";
+            textBox9.Size = new Size(267, 23);
+            textBox9.TabIndex = 23;
+            // 
+            // radioButton1
+            // 
+            radioButton1.AutoSize = true;
+            radioButton1.Location = new Point(355, 271);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(124, 19);
+            radioButton1.TabIndex = 24;
+            radioButton1.TabStop = true;
+            radioButton1.Text = "Prv. Administrador";
+            radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            radioButton2.AutoSize = true;
+            radioButton2.Location = new Point(534, 271);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new Size(88, 19);
+            radioButton2.TabIndex = 25;
+            radioButton2.TabStop = true;
+            radioButton2.Text = "Funcionário";
+            radioButton2.UseVisualStyleBackColor = true;
             // 
             // tlCadastro
             // 
@@ -287,6 +347,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(704, 427);
             ControlBox = false;
+            Controls.Add(radioButton2);
+            Controls.Add(radioButton1);
+            Controls.Add(textBox9);
+            Controls.Add(textBox8);
+            Controls.Add(label11);
+            Controls.Add(label10);
             Controls.Add(label9);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -338,12 +404,18 @@
         private Label label8;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem alterarTipoDeCadastroToolStripMenuItem;
-        private ToolStripMenuItem clienteToolStripMenuItem;
-        private ToolStripMenuItem fornecedorToolStripMenuItem;
-        private ToolStripMenuItem funcionárioToolStripMenuItem;
-        private ToolStripMenuItem produtoToolStripMenuItem;
+        private ToolStripMenuItem clientecadToolStripMenuItem;
+        private ToolStripMenuItem fornecedorcadToolStripMenuItem;
+        private ToolStripMenuItem funcionáriocadToolStripMenuItem;
+        private ToolStripMenuItem produtocadToolStripMenuItem;
         private Button button1;
         private Button button2;
-        private Label label9;
+        public Label label9;
+        private Label label10;
+        private Label label11;
+        private TextBox textBox8;
+        private TextBox textBox9;
+        private RadioButton radioButton1;
+        private RadioButton radioButton2;
     }
 }

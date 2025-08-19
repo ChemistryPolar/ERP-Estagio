@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace ERP_Basico
 {
@@ -15,6 +16,7 @@ namespace ERP_Basico
         public tlHome()
         {
             InitializeComponent();
+            this.MinimumSize = new Size(930, 530);
         }
 
         private void timerHora_Tick(object sender, EventArgs e)
@@ -31,36 +33,36 @@ namespace ERP_Basico
         private void novoPedidoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tlPedidos pedidos = new tlPedidos();
-            pedidos.Show();
+            pedidos.ShowDialog();
         }
 
         private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tlCadastro cadastro = new tlCadastro();
-            cadastro.Show();
             cadastro.AtualizarMensagem("Cadastrar Novo Cliente");
+            cadastro.ShowDialog();
 
         }
 
         private void fornecedorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tlCadastro cadastro = new tlCadastro();
-            cadastro.Show();
             cadastro.AtualizarMensagem("Cadastrar Novo Fornecedor");
+            cadastro.ShowDialog();
         }
 
         private void funcionárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tlCadastro cadastro = new tlCadastro();
-            cadastro.Show();
             cadastro.AtualizarMensagem("Cadastrar Novo Funcionário");
+            cadastro.ShowDialog();
 
         }
 
         private void produtosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             tlCadastProdut cadastProdut = new tlCadastProdut();
-            cadastProdut.Show();
+            cadastProdut.ShowDialog();
         }
 
         private void logoofToolStripMenuItem_Click(object sender, EventArgs e)

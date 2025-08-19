@@ -81,7 +81,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(999, 419);
+            dataGridView1.Size = new Size(895, 415);
             dataGridView1.TabIndex = 0;
             // 
             // Code
@@ -136,7 +136,7 @@
             // 
             button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(913, 458);
+            button1.Location = new Point(809, 454);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(96, 24);
@@ -148,7 +148,7 @@
             // 
             button2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Location = new Point(812, 458);
+            button2.Location = new Point(708, 454);
             button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(96, 24);
@@ -159,13 +159,14 @@
             // menuStrip1
             // 
             menuStrip1.AutoSize = false;
+            menuStrip1.BackColor = Color.Transparent;
             menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { menuToolStripMenuItem, pedidosToolStripMenuItem, listarToolStripMenuItem, adicionarToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
-            menuStrip1.MaximumSize = new Size(576, 22);
+            menuStrip1.MaximumSize = new Size(500, 50);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(5, 2, 0, 2);
-            menuStrip1.Size = new Size(576, 22);
+            menuStrip1.Size = new Size(500, 22);
             menuStrip1.TabIndex = 3;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -280,7 +281,7 @@
             // 
             button3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             button3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.Location = new Point(10, 458);
+            button3.Location = new Point(10, 454);
             button3.Margin = new Padding(2);
             button3.Name = "button3";
             button3.Size = new Size(96, 24);
@@ -291,18 +292,19 @@
             // textBox1
             // 
             textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            textBox1.Location = new Point(747, 2);
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Location = new Point(582, 5);
             textBox1.Margin = new Padding(2);
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "Pesquisar...";
-            textBox1.Size = new Size(170, 23);
+            textBox1.Size = new Size(232, 16);
             textBox1.TabIndex = 5;
             // 
             // button4
             // 
             button4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             button4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button4.Location = new Point(922, 0);
+            button4.Location = new Point(818, 1);
             button4.Margin = new Padding(2);
             button4.Name = "button4";
             button4.Size = new Size(96, 24);
@@ -320,11 +322,11 @@
             // 
             lblHora.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             lblHora.AutoSize = true;
-            lblHora.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblHora.Location = new Point(186, 461);
+            lblHora.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblHora.Location = new Point(184, 454);
             lblHora.Margin = new Padding(2, 0, 2, 0);
             lblHora.Name = "lblHora";
-            lblHora.Size = new Size(110, 27);
+            lblHora.Size = new Size(98, 25);
             lblHora.TabIndex = 7;
             lblHora.Text = "Carregando...";
             lblHora.UseCompatibleTextRendering = true;
@@ -333,7 +335,7 @@
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(1018, 495);
+            ClientSize = new Size(914, 491);
             ControlBox = false;
             Controls.Add(lblHora);
             Controls.Add(button4);

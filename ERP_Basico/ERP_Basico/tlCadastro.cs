@@ -18,6 +18,7 @@ namespace ERP_Basico
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
         }
 
+
         public void AtualizarMensagem(string loading)
         {
             label9.Text = loading;
@@ -28,34 +29,34 @@ namespace ERP_Basico
             this.Close();
         }
 
-        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        private void clientecadToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tlCadastro cadastro = new tlCadastro();
-            cadastro.Show();
             cadastro.AtualizarMensagem("Cadastrar Novo Cliente");
             this.Close();
+            cadastro.ShowDialog();
         }
 
-        private void fornecedorToolStripMenuItem_Click(object sender, EventArgs e)
+        private void fornecedorcadToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tlCadastro cadastro = new tlCadastro();
-            cadastro.Show();
             cadastro.AtualizarMensagem("Cadastrar Novo Fornecedor");
             this.Close();
+            cadastro.ShowDialog();
         }
 
-        private void funcionárioToolStripMenuItem_Click(object sender, EventArgs e)
+        private void funcionáriocadToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tlCadastro cadastro = new tlCadastro();
-            cadastro.Show();
             cadastro.AtualizarMensagem("Cadastrar Novo Funcionário");
             this.Close();
+            cadastro.ShowDialog();
         }
 
-        private void produtoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void produtocadToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tlCadastProdut cadastProdut = new tlCadastProdut();
-            cadastProdut.Show();
+            cadastProdut.ShowDialog();
             this.Close();
         }
     }
