@@ -38,8 +38,8 @@
             setor = new DataGridViewTextBoxColumn();
             Quantity = new DataGridViewTextBoxColumn();
             AddDate = new DataGridViewTextBoxColumn();
-            button1 = new Button();
-            button2 = new Button();
+            btnEditar = new Button();
+            btnVisualizar = new Button();
             menuStrip1 = new MenuStrip();
             menuToolStripMenuItem = new ToolStripMenuItem();
             logoofToolStripMenuItem = new ToolStripMenuItem();
@@ -57,9 +57,9 @@
             fornecedorToolStripMenuItem = new ToolStripMenuItem();
             funcionárioToolStripMenuItem = new ToolStripMenuItem();
             produtosToolStripMenuItem1 = new ToolStripMenuItem();
-            button3 = new Button();
-            textBox1 = new TextBox();
-            button4 = new Button();
+            btnExcluir = new Button();
+            txtPesquisar = new TextBox();
+            btnPesquisar = new Button();
             timerHora = new System.Windows.Forms.Timer(components);
             lblHora = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -132,29 +132,29 @@
             AddDate.ReadOnly = true;
             AddDate.Width = 125;
             // 
-            // button1
+            // btnEditar
             // 
-            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(809, 454);
-            button1.Margin = new Padding(2);
-            button1.Name = "button1";
-            button1.Size = new Size(96, 24);
-            button1.TabIndex = 1;
-            button1.Text = "Editar";
-            button1.UseVisualStyleBackColor = true;
+            btnEditar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnEditar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnEditar.Location = new Point(809, 454);
+            btnEditar.Margin = new Padding(2);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(96, 24);
+            btnEditar.TabIndex = 1;
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnVisualizar
             // 
-            button2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Location = new Point(708, 454);
-            button2.Margin = new Padding(2);
-            button2.Name = "button2";
-            button2.Size = new Size(96, 24);
-            button2.TabIndex = 2;
-            button2.Text = "Visualizar";
-            button2.UseVisualStyleBackColor = true;
+            btnVisualizar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnVisualizar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnVisualizar.Location = new Point(708, 454);
+            btnVisualizar.Margin = new Padding(2);
+            btnVisualizar.Name = "btnVisualizar";
+            btnVisualizar.Size = new Size(96, 24);
+            btnVisualizar.TabIndex = 2;
+            btnVisualizar.Text = "Visualizar";
+            btnVisualizar.UseVisualStyleBackColor = true;
             // 
             // menuStrip1
             // 
@@ -277,40 +277,40 @@
             produtosToolStripMenuItem1.Text = "Produtos";
             produtosToolStripMenuItem1.Click += produtosToolStripMenuItem1_Click;
             // 
-            // button3
+            // btnExcluir
             // 
-            button3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            button3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.Location = new Point(10, 454);
-            button3.Margin = new Padding(2);
-            button3.Name = "button3";
-            button3.Size = new Size(96, 24);
-            button3.TabIndex = 4;
-            button3.Text = "Excluir";
-            button3.UseVisualStyleBackColor = true;
+            btnExcluir.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnExcluir.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnExcluir.Location = new Point(10, 454);
+            btnExcluir.Margin = new Padding(2);
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.Size = new Size(96, 24);
+            btnExcluir.TabIndex = 4;
+            btnExcluir.Text = "Excluir";
+            btnExcluir.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtPesquisar
             // 
-            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Location = new Point(582, 5);
-            textBox1.Margin = new Padding(2);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Pesquisar...";
-            textBox1.Size = new Size(232, 16);
-            textBox1.TabIndex = 5;
+            txtPesquisar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            txtPesquisar.BorderStyle = BorderStyle.None;
+            txtPesquisar.Location = new Point(582, 5);
+            txtPesquisar.Margin = new Padding(2);
+            txtPesquisar.Name = "txtPesquisar";
+            txtPesquisar.PlaceholderText = "Pesquisar...";
+            txtPesquisar.Size = new Size(232, 16);
+            txtPesquisar.TabIndex = 5;
             // 
-            // button4
+            // btnPesquisar
             // 
-            button4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button4.Location = new Point(818, 1);
-            button4.Margin = new Padding(2);
-            button4.Name = "button4";
-            button4.Size = new Size(96, 24);
-            button4.TabIndex = 6;
-            button4.Text = "Pesquisar";
-            button4.UseVisualStyleBackColor = true;
+            btnPesquisar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnPesquisar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnPesquisar.Location = new Point(818, 1);
+            btnPesquisar.Margin = new Padding(2);
+            btnPesquisar.Name = "btnPesquisar";
+            btnPesquisar.Size = new Size(96, 24);
+            btnPesquisar.TabIndex = 6;
+            btnPesquisar.Text = "Pesquisar";
+            btnPesquisar.UseVisualStyleBackColor = true;
             // 
             // timerHora
             // 
@@ -338,11 +338,11 @@
             ClientSize = new Size(914, 491);
             ControlBox = false;
             Controls.Add(lblHora);
-            Controls.Add(button4);
-            Controls.Add(textBox1);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnPesquisar);
+            Controls.Add(txtPesquisar);
+            Controls.Add(btnExcluir);
+            Controls.Add(btnVisualizar);
+            Controls.Add(btnEditar);
             Controls.Add(dataGridView1);
             Controls.Add(menuStrip1);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -361,10 +361,10 @@
         #endregion
 
         private DataGridView dataGridView1;
-        private Button button1;
-        private Button button2;
+        private Button btnEditar;
+        private Button btnVisualizar;
         private MenuStrip menuStrip1;
-        private Button button3;
+        private Button btnExcluir;
         private ToolStripMenuItem pedidosToolStripMenuItem;
         private ToolStripMenuItem novoPedidoToolStripMenuItem;
         private ToolStripMenuItem menuToolStripMenuItem;
@@ -380,8 +380,8 @@
         private ToolStripMenuItem fornecedoresToolStripMenuItem;
         private ToolStripMenuItem clientesToolStripMenuItem;
         private ToolStripMenuItem produtosToolStripMenuItem1;
-        private TextBox textBox1;
-        private Button button4;
+        private TextBox txtPesquisar;
+        private Button btnPesquisar;
         private ToolStripMenuItem pedidosToolStripMenuItem1;
         private System.Windows.Forms.Timer timerHora;
         private Label lblHora;

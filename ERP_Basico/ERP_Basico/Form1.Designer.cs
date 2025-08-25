@@ -33,8 +33,8 @@
             txtUser = new TextBox();
             label1 = new Label();
             label2 = new Label();
-            button1 = new Button();
-            linkLabel1 = new LinkLabel();
+            btnLogin = new Button();
+            btnSair = new LinkLabel();
             SuspendLayout();
             // 
             // txtSenha
@@ -75,38 +75,38 @@
             label2.TabIndex = 3;
             label2.Text = "Senha";
             // 
-            // button1
+            // btnLogin
             // 
-            button1.BackColor = SystemColors.ControlLightLight;
-            button1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ControlText;
-            button1.Location = new Point(353, 157);
-            button1.Margin = new Padding(3, 2, 3, 2);
-            button1.Name = "button1";
-            button1.Size = new Size(82, 28);
-            button1.TabIndex = 4;
-            button1.Text = "Login";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btnLogin.BackColor = SystemColors.ControlLightLight;
+            btnLogin.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnLogin.ForeColor = SystemColors.ControlText;
+            btnLogin.Location = new Point(353, 157);
+            btnLogin.Margin = new Padding(3, 2, 3, 2);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(82, 28);
+            btnLogin.TabIndex = 4;
+            btnLogin.Text = "Login";
+            btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
             // 
-            // linkLabel1
+            // btnSair
             // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(103, 164);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(26, 15);
-            linkLabel1.TabIndex = 5;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Sair";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            btnSair.AutoSize = true;
+            btnSair.Location = new Point(103, 164);
+            btnSair.Name = "btnSair";
+            btnSair.Size = new Size(26, 15);
+            btnSair.TabIndex = 5;
+            btnSair.TabStop = true;
+            btnSair.Text = "Sair";
+            btnSair.LinkClicked += btnSair_LinkClicked;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(544, 235);
-            Controls.Add(linkLabel1);
-            Controls.Add(button1);
+            Controls.Add(btnSair);
+            Controls.Add(btnLogin);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(txtUser);
@@ -128,7 +128,7 @@
         private TextBox txtUser;
         private Label label1;
         private Label label2;
-        private Button button1;
-        private LinkLabel linkLabel1;
+        private Button btnLogin;
+        private LinkLabel btnSair;
     }
 }

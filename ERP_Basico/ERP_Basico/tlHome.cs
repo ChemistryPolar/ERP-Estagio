@@ -40,6 +40,7 @@ namespace ERP_Basico
         {
             tlCadastro cadastro = new tlCadastro();
             cadastro.AtualizarMensagem("Cadastrar Novo Cliente");
+            cadastro.TelaCadastro("cliente");
             cadastro.ShowDialog();
 
         }
@@ -48,6 +49,7 @@ namespace ERP_Basico
         {
             tlCadastro cadastro = new tlCadastro();
             cadastro.AtualizarMensagem("Cadastrar Novo Fornecedor");
+            cadastro.TelaCadastro("fornecedor");
             cadastro.ShowDialog();
         }
 
@@ -55,6 +57,7 @@ namespace ERP_Basico
         {
             tlCadastro cadastro = new tlCadastro();
             cadastro.AtualizarMensagem("Cadastrar Novo Funcionário");
+            cadastro.TelaCadastro("funcionario");
             cadastro.ShowDialog();
 
         }

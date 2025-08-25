@@ -18,6 +18,45 @@ namespace ERP_Basico
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
         }
 
+        public void TelaCadastro(string tipo)
+        {
+          switch (tipo)
+            {
+                case ("funcionario"):
+                    labelCNPJ.Visible = false;
+                    txtCNPJCad.Visible = false;
+                    break;
+                case ("cliente"):
+                    labelCNPJ.Visible = false;
+                    txtCNPJCad.Visible = false;
+                    radioAdm.Visible = false;
+                    radioFun.Visible = false;
+                    txtUser.Visible = false;
+                    txtPassword.Visible = false;
+                    labelUser.Visible = false;
+                    labelPassword.Visible = false;
+                    txtSetorCad.Visible = false;
+                    labelSetor.Visible = false;
+                break;
+                case ("fornecedor"):
+                    labelCPF.Visible = false;
+                    txtCPFCad.Visible = false;
+                    radioAdm.Visible = false;
+                    radioFun.Visible = false;
+                    txtUser.Visible = false;
+                    txtPassword.Visible = false;
+                    labelUser.Visible = false;
+                    labelPassword.Visible = false;
+                    txtSetorCad.Visible = false;
+                    labelSetor.Visible = false;
+                    break;
+                case ("visualizar"):
+                    btnCadastrar.Visible = false;
+                    break;
+
+            }
+        }
+
 
         public void AtualizarMensagem(string loading)
         {
@@ -29,35 +68,30 @@ namespace ERP_Basico
             this.Close();
         }
 
-        private void clientecadToolStripMenuItem_Click(object sender, EventArgs e)
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tlCadastro cadastro = new tlCadastro();
             cadastro.AtualizarMensagem("Cadastrar Novo Cliente");
-            this.Close();
+            cadastro.TelaCadastro("cliente");
             cadastro.ShowDialog();
+
         }
 
-        private void fornecedorcadToolStripMenuItem_Click(object sender, EventArgs e)
+        private void fornecedorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tlCadastro cadastro = new tlCadastro();
             cadastro.AtualizarMensagem("Cadastrar Novo Fornecedor");
-            this.Close();
+            cadastro.TelaCadastro("fornecedor");
             cadastro.ShowDialog();
         }
 
-        private void funcionáriocadToolStripMenuItem_Click(object sender, EventArgs e)
+        private void funcionárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tlCadastro cadastro = new tlCadastro();
             cadastro.AtualizarMensagem("Cadastrar Novo Funcionário");
-            this.Close();
+            cadastro.TelaCadastro("funcionario");
             cadastro.ShowDialog();
-        }
 
-        private void produtocadToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            tlCadastProdut cadastProdut = new tlCadastProdut();
-            cadastProdut.ShowDialog();
-            this.Close();
         }
     }
 }

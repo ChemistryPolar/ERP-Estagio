@@ -32,13 +32,13 @@
             button2 = new Button();
             button1 = new Button();
             label4 = new Label();
-            textBox4 = new TextBox();
+            txtPesoProd = new TextBox();
             label3 = new Label();
-            textBox3 = new TextBox();
+            txtQntProd = new TextBox();
             label2 = new Label();
-            textBox2 = new TextBox();
+            txtLoteProd = new TextBox();
             label1 = new Label();
-            textBox1 = new TextBox();
+            txtNomeProd = new TextBox();
             menuStrip1 = new MenuStrip();
             alterarTipoDeCadastroToolStripMenuItem = new ToolStripMenuItem();
             clienteToolStripMenuItem = new ToolStripMenuItem();
@@ -50,7 +50,7 @@
             checkedListBox2 = new CheckedListBox();
             checkedListBox3 = new CheckedListBox();
             label5 = new Label();
-            textBox5 = new TextBox();
+            txtDescProd = new TextBox();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -95,13 +95,13 @@
             label4.TabIndex = 28;
             label4.Text = "Peso:";
             // 
-            // textBox4
+            // txtPesoProd
             // 
-            textBox4.Location = new Point(106, 229);
-            textBox4.Margin = new Padding(3, 2, 3, 2);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(107, 23);
-            textBox4.TabIndex = 26;
+            txtPesoProd.Location = new Point(106, 229);
+            txtPesoProd.Margin = new Padding(3, 2, 3, 2);
+            txtPesoProd.Name = "txtPesoProd";
+            txtPesoProd.Size = new Size(107, 23);
+            txtPesoProd.TabIndex = 26;
             // 
             // label3
             // 
@@ -112,13 +112,13 @@
             label3.TabIndex = 25;
             label3.Text = "Quantidade:";
             // 
-            // textBox3
+            // txtQntProd
             // 
-            textBox3.Location = new Point(106, 180);
-            textBox3.Margin = new Padding(3, 2, 3, 2);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(107, 23);
-            textBox3.TabIndex = 24;
+            txtQntProd.Location = new Point(106, 180);
+            txtQntProd.Margin = new Padding(3, 2, 3, 2);
+            txtQntProd.Name = "txtQntProd";
+            txtQntProd.Size = new Size(107, 23);
+            txtQntProd.TabIndex = 24;
             // 
             // label2
             // 
@@ -129,14 +129,14 @@
             label2.TabIndex = 23;
             label2.Text = "Lote:";
             // 
-            // textBox2
+            // txtLoteProd
             // 
-            textBox2.Location = new Point(105, 134);
-            textBox2.Margin = new Padding(3, 2, 3, 2);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "Insira um Lote";
-            textBox2.Size = new Size(460, 23);
-            textBox2.TabIndex = 22;
+            txtLoteProd.Location = new Point(105, 134);
+            txtLoteProd.Margin = new Padding(3, 2, 3, 2);
+            txtLoteProd.Name = "txtLoteProd";
+            txtLoteProd.PlaceholderText = "Insira um Lote";
+            txtLoteProd.Size = new Size(460, 23);
+            txtLoteProd.TabIndex = 22;
             // 
             // label1
             // 
@@ -147,14 +147,14 @@
             label1.TabIndex = 21;
             label1.Text = "Nome:";
             // 
-            // textBox1
+            // txtNomeProd
             // 
-            textBox1.Location = new Point(105, 56);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Insira um Nome";
-            textBox1.Size = new Size(574, 23);
-            textBox1.TabIndex = 20;
+            txtNomeProd.Location = new Point(105, 56);
+            txtNomeProd.Margin = new Padding(3, 2, 3, 2);
+            txtNomeProd.Name = "txtNomeProd";
+            txtNomeProd.PlaceholderText = "Insira um Nome";
+            txtNomeProd.Size = new Size(574, 23);
+            txtNomeProd.TabIndex = 20;
             // 
             // menuStrip1
             // 
@@ -257,15 +257,15 @@
             label5.TabIndex = 44;
             label5.Text = "Descrição:";
             // 
-            // textBox5
+            // txtDescProd
             // 
-            textBox5.Location = new Point(105, 94);
-            textBox5.Margin = new Padding(3, 2, 3, 2);
-            textBox5.Multiline = true;
-            textBox5.Name = "textBox5";
-            textBox5.PlaceholderText = "Breve descrição...";
-            textBox5.Size = new Size(574, 21);
-            textBox5.TabIndex = 43;
+            txtDescProd.Location = new Point(105, 94);
+            txtDescProd.Margin = new Padding(3, 2, 3, 2);
+            txtDescProd.Multiline = true;
+            txtDescProd.Name = "txtDescProd";
+            txtDescProd.PlaceholderText = "Breve descrição...";
+            txtDescProd.Size = new Size(574, 21);
+            txtDescProd.TabIndex = 43;
             // 
             // tlCadastProdut
             // 
@@ -274,7 +274,7 @@
             ClientSize = new Size(694, 287);
             ControlBox = false;
             Controls.Add(label5);
-            Controls.Add(textBox5);
+            Controls.Add(txtDescProd);
             Controls.Add(checkedListBox3);
             Controls.Add(checkedListBox2);
             Controls.Add(checkedListBox1);
@@ -284,13 +284,13 @@
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label4);
-            Controls.Add(textBox4);
+            Controls.Add(txtPesoProd);
             Controls.Add(label3);
-            Controls.Add(textBox3);
+            Controls.Add(txtQntProd);
             Controls.Add(label2);
-            Controls.Add(textBox2);
+            Controls.Add(txtLoteProd);
             Controls.Add(label1);
-            Controls.Add(textBox1);
+            Controls.Add(txtNomeProd);
             Margin = new Padding(3, 2, 3, 2);
             Name = "tlCadastProdut";
             StartPosition = FormStartPosition.CenterScreen;
@@ -307,13 +307,13 @@
         private Button button2;
         private Button button1;
         private Label label4;
-        private TextBox textBox4;
+        private TextBox txtPesoProd;
         private Label label3;
-        private TextBox textBox3;
+        private TextBox txtQntProd;
         private Label label2;
-        private TextBox textBox2;
+        private TextBox txtLoteProd;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox txtNomeProd;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem alterarTipoDeCadastroToolStripMenuItem;
         private ToolStripMenuItem clienteToolStripMenuItem;
@@ -325,6 +325,6 @@
         private CheckedListBox checkedListBox2;
         private CheckedListBox checkedListBox3;
         private Label label5;
-        private TextBox textBox5;
+        private TextBox txtDescProd;
     }
 }

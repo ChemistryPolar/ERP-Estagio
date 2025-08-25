@@ -8,15 +8,14 @@ namespace ERP_Basico
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
             tlHome home = new tlHome();
             home.Show();
             this.Hide();
-
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void btnSair_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Application.Exit();
         }
