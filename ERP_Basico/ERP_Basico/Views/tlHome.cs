@@ -13,9 +13,12 @@ namespace ERP_Basico
 {
     public partial class tlHome : Form
     {
+        public Item itemSelecao;
+        public Tipo 
         public tlHome()
         {
             InitializeComponent();
+            dataGridView1.AutoGenerateColumns = false;
             this.MinimumSize = new Size(930, 530);
         }
 
@@ -73,6 +76,19 @@ namespace ERP_Basico
             Form1 form = new Form1();
             form.Show();
             this.Close();
+        }
+        private Item RecuperarItem()
+        {
+            if (dgvRegistros.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Nenhum item selecionado.", "Informação", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return null;
+            }
+            else
+            {
+                return dataGridView1.SelectedRows[0].DataBoundItem as Item;
+            }
         }
     }
 }
