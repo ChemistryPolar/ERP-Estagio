@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ERP_Basico.Services
 {
-    public class DataBaseSqlServer
+     public class DataBaseSqlServer
     {
         private SqlConnection CriarConexao()
         {
@@ -139,3 +139,4 @@ namespace ERP_Basico.Services
         }
     }
 }
+

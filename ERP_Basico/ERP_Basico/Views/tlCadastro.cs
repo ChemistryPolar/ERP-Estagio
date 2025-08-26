@@ -20,7 +20,7 @@ namespace ERP_Basico
 
         public void TelaCadastro(string tipo)
         {
-          switch (tipo)
+            switch (tipo)
             {
                 case ("funcionario"):
                     labelCNPJ.Visible = false;
@@ -37,7 +37,7 @@ namespace ERP_Basico
                     labelPassword.Visible = false;
                     txtSetorCad.Visible = false;
                     labelSetor.Visible = false;
-                break;
+                    break;
                 case ("fornecedor"):
                     labelCPF.Visible = false;
                     txtCPFCad.Visible = false;
@@ -91,6 +91,11 @@ namespace ERP_Basico
             cadastro.AtualizarMensagem("Cadastrar Novo Funcionário");
             cadastro.TelaCadastro("funcionario");
             cadastro.ShowDialog();
+
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
 
         }
     }

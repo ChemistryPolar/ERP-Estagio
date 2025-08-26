@@ -36,7 +36,7 @@ namespace ERP_Basico.Controllers
 
             dataBase.ExecutarManipulacao(CommandType.Text, queryInserir);
             return Convert.ToInt32(dataBase.ExecutarConsultaScalar(
-                CommandType.Text, "SELECT MAX(id_cliente) FROM cliente"));
+                CommandType.Text, "SELECT MAX(IdCliente) FROM cliente"));
         }
         #endregion
 
@@ -100,14 +100,14 @@ namespace ERP_Basico.Controllers
 
                 cliente.IdCliente = Convert.ToInt32(dataRow["IdCliente"]);
                 cliente.ClienteNome = Convert.ToString(dataRow["nome"]);
-                cliente.ClienteEmail = Convert.ToString(dataRow["rg"]);
-                cliente.ClienteTel = Convert.ToString(dataRow["cpf"]);
+                cliente.ClienteEmail = Convert.ToString(dataRow["Email"]);
+                cliente.ClienteTel = Convert.ToString(dataRow["Telefone"]);
                 cliente.ClienteCPF = Convert.ToString(dataRow["CPF"]);
                 cliente.ClienteEndereco = Convert.ToString(dataRow["Endereco"]);
 
                 if (!(dataRow["DataNasc"] is DBNull))
                     cliente.ClienteDatNasc =
-                        Convert.ToDateTime(dataRow["data_nascimento"]);
+                        Convert.ToDateTime(dataRow["DataNasc"]);
 
                 clienteColecao.Add(cliente);
             }
