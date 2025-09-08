@@ -25,6 +25,8 @@ namespace ERP_Basico
                 case ("funcionario"):
                     labelCNPJ.Visible = false;
                     txtCNPJCad.Visible = false;
+                    txtEmailCad.Visible = false;
+                    labelEmail.Visible = false;
                     break;
                 case ("cliente"):
                     labelCNPJ.Visible = false;

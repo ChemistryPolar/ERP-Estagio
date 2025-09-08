@@ -31,7 +31,7 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(tlHome));
-            dataGridView1 = new DataGridView();
+            dgvRegistros = new DataGridView();
             Code = new DataGridViewTextBoxColumn();
             type = new DataGridViewTextBoxColumn();
             name = new DataGridViewTextBoxColumn();
@@ -47,10 +47,10 @@
             pedidosToolStripMenuItem = new ToolStripMenuItem();
             novoPedidoToolStripMenuItem = new ToolStripMenuItem();
             listarToolStripMenuItem = new ToolStripMenuItem();
-            funcionáriosToolStripMenuItem = new ToolStripMenuItem();
+            toolFuncionarios = new ToolStripMenuItem();
             produtosToolStripMenuItem = new ToolStripMenuItem();
             fornecedoresToolStripMenuItem = new ToolStripMenuItem();
-            clientesToolStripMenuItem = new ToolStripMenuItem();
+            toolClientes = new ToolStripMenuItem();
             pedidosToolStripMenuItem1 = new ToolStripMenuItem();
             adicionarToolStripMenuItem = new ToolStripMenuItem();
             clienteToolStripMenuItem = new ToolStripMenuItem();
@@ -62,27 +62,27 @@
             btnPesquisar = new Button();
             timerHora = new System.Windows.Forms.Timer(components);
             lblHora = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvRegistros).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dgvRegistros
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AllowUserToOrderColumns = true;
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.BackgroundColor = SystemColors.ButtonFace;
-            dataGridView1.BorderStyle = BorderStyle.Fixed3D;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Code, type, name, setor, Quantity, AddDate });
-            dataGridView1.Location = new Point(10, 29);
-            dataGridView1.Margin = new Padding(2);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(895, 415);
-            dataGridView1.TabIndex = 0;
+            dgvRegistros.AllowUserToAddRows = false;
+            dgvRegistros.AllowUserToDeleteRows = false;
+            dgvRegistros.AllowUserToOrderColumns = true;
+            dgvRegistros.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvRegistros.BackgroundColor = SystemColors.ButtonFace;
+            dgvRegistros.BorderStyle = BorderStyle.Fixed3D;
+            dgvRegistros.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvRegistros.Columns.AddRange(new DataGridViewColumn[] { Code, type, name, setor, Quantity, AddDate });
+            dgvRegistros.Location = new Point(10, 29);
+            dgvRegistros.Margin = new Padding(2);
+            dgvRegistros.Name = "dgvRegistros";
+            dgvRegistros.ReadOnly = true;
+            dgvRegistros.RowHeadersWidth = 51;
+            dgvRegistros.Size = new Size(895, 415);
+            dgvRegistros.TabIndex = 0;
             // 
             // Code
             // 
@@ -207,39 +207,40 @@
             // 
             // listarToolStripMenuItem
             // 
-            listarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { funcionáriosToolStripMenuItem, produtosToolStripMenuItem, fornecedoresToolStripMenuItem, clientesToolStripMenuItem, pedidosToolStripMenuItem1 });
+            listarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { toolFuncionarios, produtosToolStripMenuItem, fornecedoresToolStripMenuItem, toolClientes, pedidosToolStripMenuItem1 });
             listarToolStripMenuItem.Name = "listarToolStripMenuItem";
             listarToolStripMenuItem.Size = new Size(47, 18);
             listarToolStripMenuItem.Text = "Listar";
             // 
-            // funcionáriosToolStripMenuItem
+            // toolFuncionarios
             // 
-            funcionáriosToolStripMenuItem.Name = "funcionáriosToolStripMenuItem";
-            funcionáriosToolStripMenuItem.Size = new Size(145, 22);
-            funcionáriosToolStripMenuItem.Text = "Funcionários";
+            toolFuncionarios.Name = "toolFuncionarios";
+            toolFuncionarios.Size = new Size(180, 22);
+            toolFuncionarios.Text = "Funcionários";
+            toolFuncionarios.Click += toolFuncionarios_Click;
             // 
             // produtosToolStripMenuItem
             // 
             produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            produtosToolStripMenuItem.Size = new Size(145, 22);
+            produtosToolStripMenuItem.Size = new Size(180, 22);
             produtosToolStripMenuItem.Text = "Produtos";
             // 
             // fornecedoresToolStripMenuItem
             // 
             fornecedoresToolStripMenuItem.Name = "fornecedoresToolStripMenuItem";
-            fornecedoresToolStripMenuItem.Size = new Size(145, 22);
+            fornecedoresToolStripMenuItem.Size = new Size(180, 22);
             fornecedoresToolStripMenuItem.Text = "Fornecedores";
             // 
-            // clientesToolStripMenuItem
+            // toolClientes
             // 
-            clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            clientesToolStripMenuItem.Size = new Size(145, 22);
-            clientesToolStripMenuItem.Text = "Clientes";
+            toolClientes.Name = "toolClientes";
+            toolClientes.Size = new Size(180, 22);
+            toolClientes.Text = "Clientes";
             // 
             // pedidosToolStripMenuItem1
             // 
             pedidosToolStripMenuItem1.Name = "pedidosToolStripMenuItem1";
-            pedidosToolStripMenuItem1.Size = new Size(145, 22);
+            pedidosToolStripMenuItem1.Size = new Size(180, 22);
             pedidosToolStripMenuItem1.Text = "Pedidos";
             // 
             // adicionarToolStripMenuItem
@@ -343,7 +344,7 @@
             Controls.Add(btnExcluir);
             Controls.Add(btnVisualizar);
             Controls.Add(btnEditar);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvRegistros);
             Controls.Add(menuStrip1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
@@ -351,7 +352,7 @@
             Name = "tlHome";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ERP Básico";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvRegistros).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -360,7 +361,7 @@
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dgvRegistros;
         private Button btnEditar;
         private Button btnVisualizar;
         private MenuStrip menuStrip1;
@@ -375,10 +376,10 @@
         private ToolStripMenuItem fornecedorToolStripMenuItem;
         private ToolStripMenuItem funcionárioToolStripMenuItem;
         private ToolStripMenuItem listarToolStripMenuItem;
-        private ToolStripMenuItem funcionáriosToolStripMenuItem;
+        private ToolStripMenuItem toolFuncionarios;
         private ToolStripMenuItem produtosToolStripMenuItem;
         private ToolStripMenuItem fornecedoresToolStripMenuItem;
-        private ToolStripMenuItem clientesToolStripMenuItem;
+        private ToolStripMenuItem toolClientes;
         private ToolStripMenuItem produtosToolStripMenuItem1;
         private TextBox txtPesquisar;
         private Button btnPesquisar;

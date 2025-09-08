@@ -8,17 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Drawing.Text;
+using ERP_Basico.Models;
+using ERP_Basico.Controllers;
 
 namespace ERP_Basico
 {
     public partial class tlHome : Form
     {
-        public Item itemSelecao;
-        public Tipo 
-        public tlHome()
+        public string Tipo = null;
+        public tlHome(string role)
         {
             InitializeComponent();
-            dataGridView1.AutoGenerateColumns = false;
+            dgvRegistros.AutoGenerateColumns = false;
             this.MinimumSize = new Size(930, 530);
         }
 
@@ -77,18 +79,27 @@ namespace ERP_Basico
             form.Show();
             this.Close();
         }
-        private Item RecuperarItem()
+        //private itemSelecao RecuperarItem()
+        //{
+           // if (dgvRegistros.SelectedRows.Count == 0)
+           // {
+             //   MessageBox.Show("Nenhum item selecionado.", "Informação",
+            //        MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    return null;
+           // }
+          //  else
+          //  {
+           //     return dgvRegistros.SelectedRows[0].DataBoundItem as Item;
+            //}
+//}
+
+private void toolFuncionarios_Click(object sender, EventArgs e)
         {
-            if (dgvRegistros.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Nenhum item selecionado.", "Informação", 
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return null;
-            }
-            else
-            {
-                return dataGridView1.SelectedRows[0].DataBoundItem as Item;
-            }
+            //FuncionarioController funcionarioController = new FuncionarioController();
+        }
+        private void toolClientes_Click(object sender, EventArgs e)
+        {
+            ClienteController clienteController = new ClienteController();
         }
     }
 }

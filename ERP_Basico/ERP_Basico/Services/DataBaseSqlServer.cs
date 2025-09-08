@@ -1,10 +1,14 @@
-﻿using System;
+﻿using ERP_Basico.Models;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace ERP_Basico.Services
 {
@@ -18,13 +22,61 @@ namespace ERP_Basico.Services
 
 
                 "Data Source=.\\SQLExpress;" +
-                "Initial Catalog=pooCamadas;" +
+                "Initial Catalog=erpBasico;" +
                 "Integrated Security=SSPI;" +
                 "User Instance = false;";
 
             conexao.Open();
             return conexao;
+            }
+
+
+
+        public void ValidarUser(string User, string Password)
+        {
+            try
+            {
+                string queryInserir = "SELECT Role from funcionario WHERE Username = @username and Password= @password";
+                string returnValue = "";
+                using SqlConnection con = CriarConexao();
+                {
+                    using (SqlCommand sqlcmd = new SqlCommand(queryInserir, con))
+                    {
+
+                        sqlcmd.Parameters.Add("@username", SqlDbType.VarChar).Value = User;
+                        sqlcmd.Parameters.Add("@password", SqlDbType.VarChar).Value = Password;
+                        returnValue = (string)sqlcmd.ExecuteScalar();
+                        returnValue = returnValue.Trim();
+                    }
+                }
+
+
+                if (String.IsNullOrEmpty(returnValue))
+                {
+                    MessageBox.Show("User ou senha incorreta");
+                    return;
+                }
+                else if (returnValue == "Admin")
+                {
+                    MessageBox.Show("Sessão iniciada como Administrador");
+                    tlHome home = new tlHome("Admin");
+                    home.Show();
+                }
+                else if (returnValue == "User")
+                {
+                    MessageBox.Show("Sessão inciada como Usuário");
+                    tlHome home = new tlHome("User");
+                    home.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Houve uma falha ao execuar o " +
+                    "comando no banco de dados.\r\n" +
+                    "Mensagem original: " + ex.Message);
+            }
         }
+
 
         private
             SqlParameterCollection sqlParameterCollection =

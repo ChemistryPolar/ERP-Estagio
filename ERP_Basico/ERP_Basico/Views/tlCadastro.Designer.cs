@@ -43,7 +43,7 @@
             label7 = new Label();
             datetimepickerDatNasc = new DateTimePicker();
             txtEmailCad = new TextBox();
-            label8 = new Label();
+            labelEmail = new Label();
             menuStrip1 = new MenuStrip();
             alterarTipoDeCadastroToolStripMenuItem = new ToolStripMenuItem();
             clientecadToolStripMenuItem = new ToolStripMenuItem();
@@ -199,14 +199,14 @@
             txtEmailCad.Size = new Size(574, 23);
             txtEmailCad.TabIndex = 14;
             // 
-            // label8
+            // labelEmail
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(16, 99);
-            label8.Name = "label8";
-            label8.Size = new Size(39, 15);
-            label8.TabIndex = 15;
-            label8.Text = "Email:";
+            labelEmail.AutoSize = true;
+            labelEmail.Location = new Point(16, 99);
+            labelEmail.Name = "labelEmail";
+            labelEmail.Size = new Size(39, 15);
+            labelEmail.TabIndex = 15;
+            labelEmail.Text = "Email:";
             // 
             // menuStrip1
             // 
@@ -352,7 +352,7 @@
             Controls.Add(label9);
             Controls.Add(button2);
             Controls.Add(btnCadastrar);
-            Controls.Add(label8);
+            Controls.Add(labelEmail);
             Controls.Add(txtEmailCad);
             Controls.Add(datetimepickerDatNasc);
             Controls.Add(label7);
@@ -397,7 +397,7 @@
         private Label label7;
         private DateTimePicker datetimepickerDatNasc;
         private TextBox txtEmailCad;
-        private Label label8;
+        private Label labelEmail;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem alterarTipoDeCadastroToolStripMenuItem;
         private ToolStripMenuItem clientecadToolStripMenuItem;
