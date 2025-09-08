@@ -22,7 +22,7 @@ namespace ERP_Basico.Controllers
         {
 
             string queryInserir =
-                "INSERT INTO cliente (Nome, Email, Telefone, CPF, Endereco, DatNasc) VALUES (@Nome, @Email, @Telefone, @CPF, @Endereco, @DatNasc)";
+                "INSERT INTO cliente (Nome, Email, Telefone, CPF, Endereco, DataNasc) VALUES (@Nome, @Email, @Telefone, @CPF, @Endereco, @DatNasc)";
 
             dataBase.LimparParametros();
 
@@ -82,11 +82,11 @@ namespace ERP_Basico.Controllers
         #endregion
 
         #region Pesquisar
-        public ClienteCollection PesquisarCliente(string nome)
+        public ClienteCollection PesquisarClientePorNome(string nome)
         {
             ClienteCollection clienteColecao = new ClienteCollection();
             string query =
-                "SELECT * FROM cliente ";
+                "SELECT * FROM cliente " + "WHERE nome LIKE '%' + @Nome + '%'";
 
             dataBase.LimparParametros();
             dataBase.AdicionarParametros("@Nome", nome.Trim());
@@ -114,6 +114,35 @@ namespace ERP_Basico.Controllers
             return clienteColecao;
         }
         #endregion
+
+        public ClienteCollection PesquisarClienteAll()
+        {
+            ClienteCollection clienteCollection = new ClienteCollection();
+            string query =
+                "SELECT * FROM cliente";
+
+            DataTable dataTable = dataBase.ExecutarConsulta(
+                CommandType.Text, query);
+
+            foreach (DataRow dataRow in dataTable.Rows)
+            {
+                Cliente cliente = new Cliente();
+
+                cliente.IdCliente = Convert.ToInt32(dataRow["IdCliente"]);
+                cliente.ClienteNome = Convert.ToString(dataRow["Nome"]);
+                cliente.ClienteEmail = Convert.ToString(dataRow["Email"]);
+                cliente.ClienteTel = Convert.ToString(dataRow["Telefone"]);
+                cliente.ClienteCPF = Convert.ToString(dataRow["CPF"]);
+                cliente.ClienteEndereco = Convert.ToString(dataRow["Endereco"]);
+
+                if (!(dataRow["DataNasc"] is DBNull))
+                    cliente.ClienteDatNasc =
+                        Convert.ToDateTime(dataRow["DataNasc"]);
+
+                clienteCollection.Add(cliente);
+            }
+            return clienteCollection;
+        }
 
     }
 }

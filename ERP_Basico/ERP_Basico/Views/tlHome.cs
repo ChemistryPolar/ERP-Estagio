@@ -81,25 +81,39 @@ namespace ERP_Basico
         }
         //private itemSelecao RecuperarItem()
         //{
-           // if (dgvRegistros.SelectedRows.Count == 0)
-           // {
-             //   MessageBox.Show("Nenhum item selecionado.", "Informação",
-            //        MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    return null;
-           // }
-          //  else
-          //  {
-           //     return dgvRegistros.SelectedRows[0].DataBoundItem as Item;
-            //}
-//}
+        // if (dgvRegistros.SelectedRows.Count == 0)
+        // {
+        //   MessageBox.Show("Nenhum item selecionado.", "Informação",
+        //        MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //    return null;
+        // }
+        //  else
+        //  {
+        //     return dgvRegistros.SelectedRows[0].DataBoundItem as Item;
+        //}
+        //}
 
-private void toolFuncionarios_Click(object sender, EventArgs e)
+        private void toolFuncionarios_Click(object sender, EventArgs e)
         {
             //FuncionarioController funcionarioController = new FuncionarioController();
         }
+        private void PesquisarCliente()
+        {
+
+            ClienteController clienteController = new ClienteController();
+            ClienteCollection clienteCollection = new ClienteCollection();
+
+            dgvRegistros.DataSource = null;
+            clienteCollection = clienteController.PesquisarClienteAll();
+            dgvRegistros.DataSource = clienteCollection;
+
+            dgvRegistros.Update();
+            dgvRegistros.Refresh();
+        }
+
         private void toolClientes_Click(object sender, EventArgs e)
         {
-            ClienteController clienteController = new ClienteController();
+            PesquisarCliente();
         }
     }
 }

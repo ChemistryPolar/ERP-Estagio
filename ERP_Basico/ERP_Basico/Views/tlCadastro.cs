@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ERP_Basico.Controllers;
+using ERP_Basico.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -58,8 +60,27 @@ namespace ERP_Basico
 
             }
         }
+        private void CadastrarTipo()
+        {
+            switch (label9.Text)
+            {
+                case ("Cadastrar Novo Cliente"):
+                    Cliente cliente = new Cliente();
+                    cliente.ClienteNome = txtNomeCad.Text;
+                    cliente.ClienteEmail = txtEmailCad.Text;
+                    cliente.ClienteTel = txtTelCad.Text;
+                    cliente.ClienteCPF = txtCPFCad.Text;
+                    cliente.ClienteEndereco = txtEnderecoCad.Text;
+                    cliente.ClienteDatNasc = datetimepickerDatNasc.Value;
+                    ClienteController clienteController = new ClienteController();
+                    int IdCliente = 0;
+                    IdCliente = clienteController.InserirCliente(cliente);
+                    MessageBox.Show("Cliente cadastrado com sucesso");
+                    this.Close();
+                    break;
+            }
 
-
+        }
         public void AtualizarMensagem(string loading)
         {
             label9.Text = loading;
@@ -99,6 +120,9 @@ namespace ERP_Basico
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
 
+            CadastrarTipo();
+
+            }
         }
     }
-}
+

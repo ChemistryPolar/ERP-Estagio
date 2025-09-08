@@ -32,12 +32,6 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(tlHome));
             dgvRegistros = new DataGridView();
-            Code = new DataGridViewTextBoxColumn();
-            type = new DataGridViewTextBoxColumn();
-            name = new DataGridViewTextBoxColumn();
-            setor = new DataGridViewTextBoxColumn();
-            Quantity = new DataGridViewTextBoxColumn();
-            AddDate = new DataGridViewTextBoxColumn();
             btnEditar = new Button();
             btnVisualizar = new Button();
             menuStrip1 = new MenuStrip();
@@ -75,7 +69,6 @@
             dgvRegistros.BackgroundColor = SystemColors.ButtonFace;
             dgvRegistros.BorderStyle = BorderStyle.Fixed3D;
             dgvRegistros.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvRegistros.Columns.AddRange(new DataGridViewColumn[] { Code, type, name, setor, Quantity, AddDate });
             dgvRegistros.Location = new Point(10, 29);
             dgvRegistros.Margin = new Padding(2);
             dgvRegistros.Name = "dgvRegistros";
@@ -83,54 +76,6 @@
             dgvRegistros.RowHeadersWidth = 51;
             dgvRegistros.Size = new Size(895, 415);
             dgvRegistros.TabIndex = 0;
-            // 
-            // Code
-            // 
-            Code.HeaderText = "Código";
-            Code.MinimumWidth = 6;
-            Code.Name = "Code";
-            Code.ReadOnly = true;
-            Code.Width = 125;
-            // 
-            // type
-            // 
-            type.HeaderText = "Tipo";
-            type.MinimumWidth = 6;
-            type.Name = "type";
-            type.ReadOnly = true;
-            type.Width = 200;
-            // 
-            // name
-            // 
-            name.HeaderText = "Nome";
-            name.MinimumWidth = 6;
-            name.Name = "name";
-            name.ReadOnly = true;
-            name.Width = 420;
-            // 
-            // setor
-            // 
-            setor.HeaderText = "Setor";
-            setor.MinimumWidth = 6;
-            setor.Name = "setor";
-            setor.ReadOnly = true;
-            setor.Width = 200;
-            // 
-            // Quantity
-            // 
-            Quantity.HeaderText = "Quant. Estq.";
-            Quantity.MinimumWidth = 6;
-            Quantity.Name = "Quantity";
-            Quantity.ReadOnly = true;
-            Quantity.Width = 125;
-            // 
-            // AddDate
-            // 
-            AddDate.HeaderText = "Data de Adição";
-            AddDate.MinimumWidth = 6;
-            AddDate.Name = "AddDate";
-            AddDate.ReadOnly = true;
-            AddDate.Width = 125;
             // 
             // btnEditar
             // 
@@ -201,7 +146,7 @@
             // novoPedidoToolStripMenuItem
             // 
             novoPedidoToolStripMenuItem.Name = "novoPedidoToolStripMenuItem";
-            novoPedidoToolStripMenuItem.Size = new Size(143, 22);
+            novoPedidoToolStripMenuItem.Size = new Size(180, 22);
             novoPedidoToolStripMenuItem.Text = "Novo Pedido";
             novoPedidoToolStripMenuItem.Click += novoPedidoToolStripMenuItem_Click;
             // 
@@ -236,6 +181,7 @@
             toolClientes.Name = "toolClientes";
             toolClientes.Size = new Size(180, 22);
             toolClientes.Text = "Clientes";
+            toolClientes.Click += toolClientes_Click;
             // 
             // pedidosToolStripMenuItem1
             // 
@@ -386,11 +332,5 @@
         private ToolStripMenuItem pedidosToolStripMenuItem1;
         private System.Windows.Forms.Timer timerHora;
         private Label lblHora;
-        private DataGridViewTextBoxColumn Code;
-        private DataGridViewTextBoxColumn type;
-        private DataGridViewTextBoxColumn name;
-        private DataGridViewTextBoxColumn setor;
-        private DataGridViewTextBoxColumn Quantity;
-        private DataGridViewTextBoxColumn AddDate;
     }
 }
