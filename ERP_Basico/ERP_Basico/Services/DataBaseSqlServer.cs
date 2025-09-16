@@ -46,27 +46,27 @@ namespace ERP_Basico.Services
                         sqlcmd.Parameters.Add("@username", SqlDbType.VarChar).Value = User;
                         sqlcmd.Parameters.Add("@password", SqlDbType.VarChar).Value = Password;
                         returnValue = (string)sqlcmd.ExecuteScalar();
-                        returnValue = returnValue.Trim();
+
+                        if (String.IsNullOrEmpty(returnValue))
+                        {
+                            MessageBox.Show("User ou senha incorreta");
+                            return;
+                        }
+                        else if (returnValue == "Admin")
+                        {
+                            MessageBox.Show("Sessão iniciada como Administrador");
+                            tlHome home = new tlHome("Admin");
+                            returnValue = returnValue.Trim();
+                            home.Show();
+                        }
+                        else if (returnValue == "User")
+                        {
+                            MessageBox.Show("Sessão inciada como Usuário");
+                            tlHome home = new tlHome("User");
+                            returnValue = returnValue.Trim();
+                            home.Show();
+                        }
                     }
-                }
-
-
-                if (String.IsNullOrEmpty(returnValue))
-                {
-                    MessageBox.Show("User ou senha incorreta");
-                    return;
-                }
-                else if (returnValue == "Admin")
-                {
-                    MessageBox.Show("Sessão iniciada como Administrador");
-                    tlHome home = new tlHome("Admin");
-                    home.Show();
-                }
-                else if (returnValue == "User")
-                {
-                    MessageBox.Show("Sessão inciada como Usuário");
-                    tlHome home = new tlHome("User");
-                    home.Show();
                 }
             }
             catch (Exception ex)
@@ -75,7 +75,9 @@ namespace ERP_Basico.Services
                     "comando no banco de dados.\r\n" +
                     "Mensagem original: " + ex.Message);
             }
-        }
+        
+    }
+
 
 
         private
