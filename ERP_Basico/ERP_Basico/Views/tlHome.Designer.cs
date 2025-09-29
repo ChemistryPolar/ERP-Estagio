@@ -56,8 +56,19 @@
             btnPesquisar = new Button();
             timerHora = new System.Windows.Forms.Timer(components);
             lblHora = new Label();
+            clienteCollectionBindingSource = new BindingSource(components);
+            funcionarioCollectionBindingSource = new BindingSource(components);
+            idClienteDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            clienteNomeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            clienteEmailDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            clienteTelDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            clienteCPFDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            clienteEnderecoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            clienteDatNascDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvRegistros).BeginInit();
             menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)clienteCollectionBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)funcionarioCollectionBindingSource).BeginInit();
             SuspendLayout();
             // 
             // dgvRegistros
@@ -66,9 +77,12 @@
             dgvRegistros.AllowUserToDeleteRows = false;
             dgvRegistros.AllowUserToOrderColumns = true;
             dgvRegistros.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvRegistros.AutoGenerateColumns = false;
             dgvRegistros.BackgroundColor = SystemColors.ButtonFace;
             dgvRegistros.BorderStyle = BorderStyle.Fixed3D;
             dgvRegistros.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvRegistros.Columns.AddRange(new DataGridViewColumn[] { idClienteDataGridViewTextBoxColumn, clienteNomeDataGridViewTextBoxColumn, clienteEmailDataGridViewTextBoxColumn, clienteTelDataGridViewTextBoxColumn, clienteCPFDataGridViewTextBoxColumn, clienteEnderecoDataGridViewTextBoxColumn, clienteDatNascDataGridViewTextBoxColumn });
+            dgvRegistros.DataSource = clienteCollectionBindingSource;
             dgvRegistros.Location = new Point(10, 29);
             dgvRegistros.Margin = new Padding(2);
             dgvRegistros.Name = "dgvRegistros";
@@ -76,6 +90,7 @@
             dgvRegistros.RowHeadersWidth = 51;
             dgvRegistros.Size = new Size(895, 415);
             dgvRegistros.TabIndex = 0;
+            dgvRegistros.VirtualMode = true;
             // 
             // btnEditar
             // 
@@ -146,7 +161,7 @@
             // novoPedidoToolStripMenuItem
             // 
             novoPedidoToolStripMenuItem.Name = "novoPedidoToolStripMenuItem";
-            novoPedidoToolStripMenuItem.Size = new Size(180, 22);
+            novoPedidoToolStripMenuItem.Size = new Size(143, 22);
             novoPedidoToolStripMenuItem.Text = "Novo Pedido";
             novoPedidoToolStripMenuItem.Click += novoPedidoToolStripMenuItem_Click;
             // 
@@ -160,33 +175,33 @@
             // toolFuncionarios
             // 
             toolFuncionarios.Name = "toolFuncionarios";
-            toolFuncionarios.Size = new Size(180, 22);
+            toolFuncionarios.Size = new Size(145, 22);
             toolFuncionarios.Text = "Funcionários";
             toolFuncionarios.Click += toolFuncionarios_Click;
             // 
             // produtosToolStripMenuItem
             // 
             produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            produtosToolStripMenuItem.Size = new Size(180, 22);
+            produtosToolStripMenuItem.Size = new Size(145, 22);
             produtosToolStripMenuItem.Text = "Produtos";
             // 
             // fornecedoresToolStripMenuItem
             // 
             fornecedoresToolStripMenuItem.Name = "fornecedoresToolStripMenuItem";
-            fornecedoresToolStripMenuItem.Size = new Size(180, 22);
+            fornecedoresToolStripMenuItem.Size = new Size(145, 22);
             fornecedoresToolStripMenuItem.Text = "Fornecedores";
             // 
             // toolClientes
             // 
             toolClientes.Name = "toolClientes";
-            toolClientes.Size = new Size(180, 22);
+            toolClientes.Size = new Size(145, 22);
             toolClientes.Text = "Clientes";
             toolClientes.Click += toolClientes_Click;
             // 
             // pedidosToolStripMenuItem1
             // 
             pedidosToolStripMenuItem1.Name = "pedidosToolStripMenuItem1";
-            pedidosToolStripMenuItem1.Size = new Size(180, 22);
+            pedidosToolStripMenuItem1.Size = new Size(145, 22);
             pedidosToolStripMenuItem1.Text = "Pedidos";
             // 
             // adicionarToolStripMenuItem
@@ -278,6 +293,63 @@
             lblHora.Text = "Carregando...";
             lblHora.UseCompatibleTextRendering = true;
             // 
+            // clienteCollectionBindingSource
+            // 
+            clienteCollectionBindingSource.DataSource = typeof(Models.ClienteCollection);
+            // 
+            // funcionarioCollectionBindingSource
+            // 
+            funcionarioCollectionBindingSource.DataSource = typeof(Models.FuncionarioCollection);
+            // 
+            // idClienteDataGridViewTextBoxColumn
+            // 
+            idClienteDataGridViewTextBoxColumn.DataPropertyName = "IdCliente";
+            idClienteDataGridViewTextBoxColumn.HeaderText = "IdCliente";
+            idClienteDataGridViewTextBoxColumn.Name = "idClienteDataGridViewTextBoxColumn";
+            idClienteDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // clienteNomeDataGridViewTextBoxColumn
+            // 
+            clienteNomeDataGridViewTextBoxColumn.DataPropertyName = "ClienteNome";
+            clienteNomeDataGridViewTextBoxColumn.HeaderText = "ClienteNome";
+            clienteNomeDataGridViewTextBoxColumn.Name = "clienteNomeDataGridViewTextBoxColumn";
+            clienteNomeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // clienteEmailDataGridViewTextBoxColumn
+            // 
+            clienteEmailDataGridViewTextBoxColumn.DataPropertyName = "ClienteEmail";
+            clienteEmailDataGridViewTextBoxColumn.HeaderText = "ClienteEmail";
+            clienteEmailDataGridViewTextBoxColumn.Name = "clienteEmailDataGridViewTextBoxColumn";
+            clienteEmailDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // clienteTelDataGridViewTextBoxColumn
+            // 
+            clienteTelDataGridViewTextBoxColumn.DataPropertyName = "ClienteTel";
+            clienteTelDataGridViewTextBoxColumn.HeaderText = "ClienteTel";
+            clienteTelDataGridViewTextBoxColumn.Name = "clienteTelDataGridViewTextBoxColumn";
+            clienteTelDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // clienteCPFDataGridViewTextBoxColumn
+            // 
+            clienteCPFDataGridViewTextBoxColumn.DataPropertyName = "ClienteCPF";
+            clienteCPFDataGridViewTextBoxColumn.HeaderText = "ClienteCPF";
+            clienteCPFDataGridViewTextBoxColumn.Name = "clienteCPFDataGridViewTextBoxColumn";
+            clienteCPFDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // clienteEnderecoDataGridViewTextBoxColumn
+            // 
+            clienteEnderecoDataGridViewTextBoxColumn.DataPropertyName = "ClienteEndereco";
+            clienteEnderecoDataGridViewTextBoxColumn.HeaderText = "ClienteEndereco";
+            clienteEnderecoDataGridViewTextBoxColumn.Name = "clienteEnderecoDataGridViewTextBoxColumn";
+            clienteEnderecoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // clienteDatNascDataGridViewTextBoxColumn
+            // 
+            clienteDatNascDataGridViewTextBoxColumn.DataPropertyName = "ClienteDatNasc";
+            clienteDatNascDataGridViewTextBoxColumn.HeaderText = "ClienteDatNasc";
+            clienteDatNascDataGridViewTextBoxColumn.Name = "clienteDatNascDataGridViewTextBoxColumn";
+            clienteDatNascDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // tlHome
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -301,6 +373,8 @@
             ((System.ComponentModel.ISupportInitialize)dgvRegistros).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)clienteCollectionBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)funcionarioCollectionBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -332,5 +406,14 @@
         private ToolStripMenuItem pedidosToolStripMenuItem1;
         private System.Windows.Forms.Timer timerHora;
         private Label lblHora;
+        private BindingSource clienteCollectionBindingSource;
+        private BindingSource funcionarioCollectionBindingSource;
+        private DataGridViewTextBoxColumn idClienteDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn clienteNomeDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn clienteEmailDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn clienteTelDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn clienteCPFDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn clienteEnderecoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn clienteDatNascDataGridViewTextBoxColumn;
     }
 }
