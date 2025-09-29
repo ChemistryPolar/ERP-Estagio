@@ -22,6 +22,23 @@ namespace ERP_Basico
             InitializeComponent();
             dgvRegistros.AutoGenerateColumns = false;
             this.MinimumSize = new Size(930, 530);
+
+            switch (role)
+            {
+                case ("User"):
+                    clienteToolStripMenuItem.Visible = false;
+                    fornecedorToolStripMenuItem.Visible = false;
+                    funcionárioToolStripMenuItem.Visible = false;
+                    produtosToolStripMenuItem1.Visible = false;
+                    novoPedidoToolStripMenuItem.Visible = false;
+                    btnEditar.Visible = false;
+                    btnExcluir.Visible = false;
+                    pedidosToolStripMenuItem.Visible=false;
+                    adicionarToolStripMenuItem.Visible=false;
+                    break;
+                case ("Admin"):
+                    break;
+            }
         }
 
         private void timerHora_Tick(object sender, EventArgs e)
