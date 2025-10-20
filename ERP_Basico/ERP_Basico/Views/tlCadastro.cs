@@ -1,10 +1,12 @@
 ﻿using ERP_Basico.Controllers;
 using ERP_Basico.Models;
+using ERP_Basico.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,13 +16,20 @@ namespace ERP_Basico
 {
     public partial class tlCadastro : Form
     {
-        public tlCadastro()
+        Cliente clienteSelecionado;
+        tlHome fun = new tlHome("Admin");
+        public tlCadastro(string _tipo, string _acao, Cliente cliente)
         {
             InitializeComponent();
+            clienteSelecionado = cliente;
+            string tipo = _tipo;
+            string acao = _acao;
+            TelaCadastro(tipo, acao);
+            Cadastrar(tipo);
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
         }
-
-        public void TelaCadastro(string tipo)
+        public Cliente clienteSelecao;
+        public void TelaCadastro(string tipo, string acao)
         {
             switch (tipo)
             {
@@ -54,17 +63,30 @@ namespace ERP_Basico
                     txtSetorCad.Visible = false;
                     labelSetor.Visible = false;
                     break;
-                case ("visualizar"):
+
+            }
+            switch (acao)
+            {
+                case ("Visualizar"):
+                    btnAlterar.Visible = false;
                     btnCadastrar.Visible = false;
+                    CarregarDados();
+                    break;
+                case ("Cadastrar"):
+                    btnAlterar.Visible = false;
+                    break;
+                case ("Alterar"):
+                    btnAlterar.Visible = false;
+                    CarregarDados();
                     break;
 
             }
         }
-        private void CadastrarTipo()
+        private void Cadastrar(string tipo)
         {
             switch (label9.Text)
             {
-                case ("Cadastrar Novo Cliente"):
+                case ("Cliente"):
                     Cliente cliente = new Cliente();
                     cliente.ClienteNome = txtNomeCad.Text;
                     cliente.ClienteEmail = txtEmailCad.Text;
@@ -81,6 +103,15 @@ namespace ERP_Basico
             }
 
         }
+        private void CarregarDados()
+        {
+            txtNomeCad.Text = clienteSelecionado.ClienteNome;
+            txtEmailCad.Text = clienteSelecionado.ClienteEmail;
+            txtTelCad.Text = clienteSelecionado.ClienteTel;
+            txtCPFCad.Text = clienteSelecionado.ClienteCPF;
+            txtEnderecoCad.Text = clienteSelecionado.ClienteEndereco;
+            datetimepickerDatNasc.Value = clienteSelecionado.ClienteDatNasc;
+        }
         public void AtualizarMensagem(string loading)
         {
             label9.Text = loading;
@@ -93,34 +124,25 @@ namespace ERP_Basico
 
         private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tlCadastro cadastro = new tlCadastro();
-            cadastro.AtualizarMensagem("Cadastrar Novo Cliente");
-            cadastro.TelaCadastro("cliente");
-            cadastro.ShowDialog();
+            //fun.ChamarTelaCadastro("Cliente", "Cadastrar", Cliente);
 
         }
 
         private void fornecedorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tlCadastro cadastro = new tlCadastro();
-            cadastro.AtualizarMensagem("Cadastrar Novo Fornecedor");
-            cadastro.TelaCadastro("fornecedor");
-            cadastro.ShowDialog();
+           // fun.ChamarTelaCadastro("Fornecedor", "Cadastrar");
         }
 
         private void funcionárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tlCadastro cadastro = new tlCadastro();
-            cadastro.AtualizarMensagem("Cadastrar Novo Funcionário");
-            cadastro.TelaCadastro("funcionario");
-            cadastro.ShowDialog();
+          //  fun.ChamarTelaCadastro("Fornecedor", "Cadastrar");
 
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
 
-            CadastrarTipo();
+            Cadastrar("Cliente");
 
             }
         }

@@ -62,27 +62,18 @@ namespace ERP_Basico
 
         private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tlCadastro cadastro = new tlCadastro();
-            cadastro.AtualizarMensagem("Cadastrar Novo Cliente");
-            cadastro.TelaCadastro("cliente");
-            cadastro.ShowDialog();
+          //  ChamarTelaCadastro("Cliente", "Cadastrar");
 
         }
 
         private void fornecedorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tlCadastro cadastro = new tlCadastro();
-            cadastro.AtualizarMensagem("Cadastrar Novo Fornecedor");
-            cadastro.TelaCadastro("fornecedor");
-            cadastro.ShowDialog();
+          //  ChamarTelaCadastro("Fornecedor", "Cadastrar");
         }
 
         private void funcionárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tlCadastro cadastro = new tlCadastro();
-            cadastro.AtualizarMensagem("Cadastrar Novo Funcionário");
-            cadastro.TelaCadastro("funcionario");
-            cadastro.ShowDialog();
+          //  ChamarTelaCadastro("Funcionario", "Cadastrar");
 
         }
 
@@ -98,6 +89,35 @@ namespace ERP_Basico
             form.Show();
             this.Close();
         }
+
+
+        private void toolFuncionarios_Click(object sender, EventArgs e)
+        {
+            //FuncionarioController funcionarioController = new FuncionarioController();
+        }
+        private void PesquisarCliente()
+        {
+
+            ClienteController clienteController = new ClienteController();
+            ClienteCollection clienteCollection = new ClienteCollection();
+
+            dgvRegistros.DataSource = null;
+            clienteCollection = clienteController.PesquisarClienteAll();
+            dgvRegistros.DataSource = clienteCollection;
+
+            dgvRegistros.Update();
+            dgvRegistros.Refresh();
+        }
+
+        private void toolClientes_Click(object sender, EventArgs e)
+        {
+            PesquisarCliente();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            ExcluirCliente();
+        }
         private Cliente RecuperarCliente()
         {
             if (dgvRegistros.SelectedRows.Count == 0)
@@ -111,6 +131,7 @@ namespace ERP_Basico
                 return dgvRegistros.SelectedRows[0].DataBoundItem as Cliente;
             }
         }
+
         private void ExcluirCliente()
         {
             Cliente clienteSelecionado = RecuperarCliente();
@@ -141,34 +162,22 @@ namespace ERP_Basico
                 }
             }
         }
-
-        private void toolFuncionarios_Click(object sender, EventArgs e)
+        public void ChamarTelaCadastro(string tipo, string acao, Cliente cliente)
         {
-            //FuncionarioController funcionarioController = new FuncionarioController();
-        }
-        private void PesquisarCliente()
-        {
+            tlCadastro frm = new tlCadastro(tipo, acao, cliente);
+            frm.ShowDialog();
+            frm.AtualizarMensagem(tipo + acao);
 
-            ClienteController clienteController = new ClienteController();
-            ClienteCollection clienteCollection = new ClienteCollection();
-
-            dgvRegistros.DataSource = null;
-            clienteCollection = clienteController.PesquisarClienteAll();
-            dgvRegistros.DataSource = clienteCollection;
-
-            dgvRegistros.Update();
-            dgvRegistros.Refresh();
+            if (acao != "Visualizar")
+                PesquisarCliente();
         }
 
-        private void toolClientes_Click(object sender, EventArgs e)
+        private void btnVisualizar_Click(object sender, EventArgs e)
         {
-            PesquisarCliente();
-        }
-
-        private void btnExcluir_Click(object sender, EventArgs e)
-        {
-            ExcluirCliente();
+            ChamarTelaCadastro("Visualizar", "Cliente", RecuperarCliente());
         }
     }
 }
+
+
 

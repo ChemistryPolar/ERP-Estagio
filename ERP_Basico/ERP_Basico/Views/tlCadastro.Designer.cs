@@ -59,6 +59,7 @@
             txtPassword = new TextBox();
             radioAdm = new RadioButton();
             radioFun = new RadioButton();
+            btnAlterar = new Button();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -229,25 +230,25 @@
             // clientecadToolStripMenuItem
             // 
             clientecadToolStripMenuItem.Name = "clientecadToolStripMenuItem";
-            clientecadToolStripMenuItem.Size = new Size(137, 22);
+            clientecadToolStripMenuItem.Size = new Size(180, 22);
             clientecadToolStripMenuItem.Text = "Cliente";
             // 
             // fornecedorcadToolStripMenuItem
             // 
             fornecedorcadToolStripMenuItem.Name = "fornecedorcadToolStripMenuItem";
-            fornecedorcadToolStripMenuItem.Size = new Size(137, 22);
+            fornecedorcadToolStripMenuItem.Size = new Size(180, 22);
             fornecedorcadToolStripMenuItem.Text = "Fornecedor";
             // 
             // funcionáriocadToolStripMenuItem
             // 
             funcionáriocadToolStripMenuItem.Name = "funcionáriocadToolStripMenuItem";
-            funcionáriocadToolStripMenuItem.Size = new Size(137, 22);
+            funcionáriocadToolStripMenuItem.Size = new Size(180, 22);
             funcionáriocadToolStripMenuItem.Text = "Funcionário";
             // 
             // produtocadToolStripMenuItem
             // 
             produtocadToolStripMenuItem.Name = "produtocadToolStripMenuItem";
-            produtocadToolStripMenuItem.Size = new Size(137, 22);
+            produtocadToolStripMenuItem.Size = new Size(180, 22);
             produtocadToolStripMenuItem.Text = "Produto";
             // 
             // btnCadastrar
@@ -337,12 +338,23 @@
             radioFun.Text = "Funcionário";
             radioFun.UseVisualStyleBackColor = true;
             // 
+            // btnAlterar
+            // 
+            btnAlterar.Location = new Point(427, 396);
+            btnAlterar.Margin = new Padding(3, 2, 3, 2);
+            btnAlterar.Name = "btnAlterar";
+            btnAlterar.Size = new Size(82, 22);
+            btnAlterar.TabIndex = 26;
+            btnAlterar.Text = "Alterar";
+            btnAlterar.UseVisualStyleBackColor = true;
+            // 
             // tlCadastro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(704, 427);
             ControlBox = false;
+            Controls.Add(btnAlterar);
             Controls.Add(radioFun);
             Controls.Add(radioAdm);
             Controls.Add(txtPassword);
@@ -413,5 +425,6 @@
         private TextBox txtPassword;
         private RadioButton radioAdm;
         private RadioButton radioFun;
+        private Button btnAlterar;
     }
 }
