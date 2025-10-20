@@ -15,8 +15,10 @@ using ERP_Basico.Controllers;
 namespace ERP_Basico
 {
     public partial class tlHome : Form
+
     {
         public string Tipo = null;
+        public Cliente clienteSelecao;
         public tlHome(string role)
         {
             InitializeComponent();
@@ -33,8 +35,8 @@ namespace ERP_Basico
                     novoPedidoToolStripMenuItem.Visible = false;
                     btnEditar.Visible = false;
                     btnExcluir.Visible = false;
-                    pedidosToolStripMenuItem.Visible=false;
-                    adicionarToolStripMenuItem.Visible=false;
+                    pedidosToolStripMenuItem.Visible = false;
+                    adicionarToolStripMenuItem.Visible = false;
                     break;
                 case ("Admin"):
                     break;
@@ -96,19 +98,49 @@ namespace ERP_Basico
             form.Show();
             this.Close();
         }
-        //private itemSelecao RecuperarItem()
-        //{
-        // if (dgvRegistros.SelectedRows.Count == 0)
-        // {
-        //   MessageBox.Show("Nenhum item selecionado.", "Informação",
-        //        MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //    return null;
-        // }
-        //  else
-        //  {
-        //     return dgvRegistros.SelectedRows[0].DataBoundItem as Item;
-        //}
-        //}
+        private Cliente RecuperarCliente()
+        {
+            if (dgvRegistros.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Nenhum item selecionado.", "Informação",
+                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return null;
+            }
+            else
+            {
+                return dgvRegistros.SelectedRows[0].DataBoundItem as Cliente;
+            }
+        }
+        private void ExcluirCliente()
+        {
+            Cliente clienteSelecionado = RecuperarCliente();
+
+            if (clienteSelecionado != null)
+            {
+                if (MessageBox.Show(
+                    "Deseja realmente excluir o registro?",
+                    "Confirmação", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+
+
+                    ClienteController clienteController = new ClienteController();
+
+                    if (clienteController.ApagarCliente(clienteSelecionado.IdCliente) > 0)
+                    {
+                        MessageBox.Show("Registro excluído com sucesso.",
+                            "Informação", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+
+                        PesquisarCliente();
+                    }
+                    else
+                        MessageBox.Show("Não foi possível excluir o regsitro.",
+                            "Atenção", MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+                }
+            }
+        }
 
         private void toolFuncionarios_Click(object sender, EventArgs e)
         {
@@ -131,6 +163,11 @@ namespace ERP_Basico
         private void toolClientes_Click(object sender, EventArgs e)
         {
             PesquisarCliente();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            ExcluirCliente();
         }
     }
 }

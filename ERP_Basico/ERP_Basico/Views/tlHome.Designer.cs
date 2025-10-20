@@ -32,6 +32,14 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(tlHome));
             dgvRegistros = new DataGridView();
+            idClienteDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            clienteNomeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            clienteEmailDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            clienteTelDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            clienteCPFDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            clienteEnderecoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            clienteDatNascDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            clienteCollectionBindingSource = new BindingSource(components);
             btnEditar = new Button();
             btnVisualizar = new Button();
             menuStrip1 = new MenuStrip();
@@ -56,18 +64,10 @@
             btnPesquisar = new Button();
             timerHora = new System.Windows.Forms.Timer(components);
             lblHora = new Label();
-            clienteCollectionBindingSource = new BindingSource(components);
             funcionarioCollectionBindingSource = new BindingSource(components);
-            idClienteDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            clienteNomeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            clienteEmailDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            clienteTelDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            clienteCPFDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            clienteEnderecoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            clienteDatNascDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvRegistros).BeginInit();
-            menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)clienteCollectionBindingSource).BeginInit();
+            menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)funcionarioCollectionBindingSource).BeginInit();
             SuspendLayout();
             // 
@@ -91,6 +91,59 @@
             dgvRegistros.Size = new Size(895, 415);
             dgvRegistros.TabIndex = 0;
             dgvRegistros.VirtualMode = true;
+            // 
+            // idClienteDataGridViewTextBoxColumn
+            // 
+            idClienteDataGridViewTextBoxColumn.DataPropertyName = "IdCliente";
+            idClienteDataGridViewTextBoxColumn.HeaderText = "IdCliente";
+            idClienteDataGridViewTextBoxColumn.Name = "idClienteDataGridViewTextBoxColumn";
+            idClienteDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // clienteNomeDataGridViewTextBoxColumn
+            // 
+            clienteNomeDataGridViewTextBoxColumn.DataPropertyName = "ClienteNome";
+            clienteNomeDataGridViewTextBoxColumn.HeaderText = "ClienteNome";
+            clienteNomeDataGridViewTextBoxColumn.Name = "clienteNomeDataGridViewTextBoxColumn";
+            clienteNomeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // clienteEmailDataGridViewTextBoxColumn
+            // 
+            clienteEmailDataGridViewTextBoxColumn.DataPropertyName = "ClienteEmail";
+            clienteEmailDataGridViewTextBoxColumn.HeaderText = "ClienteEmail";
+            clienteEmailDataGridViewTextBoxColumn.Name = "clienteEmailDataGridViewTextBoxColumn";
+            clienteEmailDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // clienteTelDataGridViewTextBoxColumn
+            // 
+            clienteTelDataGridViewTextBoxColumn.DataPropertyName = "ClienteTel";
+            clienteTelDataGridViewTextBoxColumn.HeaderText = "ClienteTel";
+            clienteTelDataGridViewTextBoxColumn.Name = "clienteTelDataGridViewTextBoxColumn";
+            clienteTelDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // clienteCPFDataGridViewTextBoxColumn
+            // 
+            clienteCPFDataGridViewTextBoxColumn.DataPropertyName = "ClienteCPF";
+            clienteCPFDataGridViewTextBoxColumn.HeaderText = "ClienteCPF";
+            clienteCPFDataGridViewTextBoxColumn.Name = "clienteCPFDataGridViewTextBoxColumn";
+            clienteCPFDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // clienteEnderecoDataGridViewTextBoxColumn
+            // 
+            clienteEnderecoDataGridViewTextBoxColumn.DataPropertyName = "ClienteEndereco";
+            clienteEnderecoDataGridViewTextBoxColumn.HeaderText = "ClienteEndereco";
+            clienteEnderecoDataGridViewTextBoxColumn.Name = "clienteEnderecoDataGridViewTextBoxColumn";
+            clienteEnderecoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // clienteDatNascDataGridViewTextBoxColumn
+            // 
+            clienteDatNascDataGridViewTextBoxColumn.DataPropertyName = "ClienteDatNasc";
+            clienteDatNascDataGridViewTextBoxColumn.HeaderText = "ClienteDatNasc";
+            clienteDatNascDataGridViewTextBoxColumn.Name = "clienteDatNascDataGridViewTextBoxColumn";
+            clienteDatNascDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // clienteCollectionBindingSource
+            // 
+            clienteCollectionBindingSource.DataSource = typeof(Models.ClienteCollection);
             // 
             // btnEditar
             // 
@@ -250,6 +303,7 @@
             btnExcluir.TabIndex = 4;
             btnExcluir.Text = "Excluir";
             btnExcluir.UseVisualStyleBackColor = true;
+            btnExcluir.Click += btnExcluir_Click;
             // 
             // txtPesquisar
             // 
@@ -293,62 +347,9 @@
             lblHora.Text = "Carregando...";
             lblHora.UseCompatibleTextRendering = true;
             // 
-            // clienteCollectionBindingSource
-            // 
-            clienteCollectionBindingSource.DataSource = typeof(Models.ClienteCollection);
-            // 
             // funcionarioCollectionBindingSource
             // 
             funcionarioCollectionBindingSource.DataSource = typeof(Models.FuncionarioCollection);
-            // 
-            // idClienteDataGridViewTextBoxColumn
-            // 
-            idClienteDataGridViewTextBoxColumn.DataPropertyName = "IdCliente";
-            idClienteDataGridViewTextBoxColumn.HeaderText = "IdCliente";
-            idClienteDataGridViewTextBoxColumn.Name = "idClienteDataGridViewTextBoxColumn";
-            idClienteDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // clienteNomeDataGridViewTextBoxColumn
-            // 
-            clienteNomeDataGridViewTextBoxColumn.DataPropertyName = "ClienteNome";
-            clienteNomeDataGridViewTextBoxColumn.HeaderText = "ClienteNome";
-            clienteNomeDataGridViewTextBoxColumn.Name = "clienteNomeDataGridViewTextBoxColumn";
-            clienteNomeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // clienteEmailDataGridViewTextBoxColumn
-            // 
-            clienteEmailDataGridViewTextBoxColumn.DataPropertyName = "ClienteEmail";
-            clienteEmailDataGridViewTextBoxColumn.HeaderText = "ClienteEmail";
-            clienteEmailDataGridViewTextBoxColumn.Name = "clienteEmailDataGridViewTextBoxColumn";
-            clienteEmailDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // clienteTelDataGridViewTextBoxColumn
-            // 
-            clienteTelDataGridViewTextBoxColumn.DataPropertyName = "ClienteTel";
-            clienteTelDataGridViewTextBoxColumn.HeaderText = "ClienteTel";
-            clienteTelDataGridViewTextBoxColumn.Name = "clienteTelDataGridViewTextBoxColumn";
-            clienteTelDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // clienteCPFDataGridViewTextBoxColumn
-            // 
-            clienteCPFDataGridViewTextBoxColumn.DataPropertyName = "ClienteCPF";
-            clienteCPFDataGridViewTextBoxColumn.HeaderText = "ClienteCPF";
-            clienteCPFDataGridViewTextBoxColumn.Name = "clienteCPFDataGridViewTextBoxColumn";
-            clienteCPFDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // clienteEnderecoDataGridViewTextBoxColumn
-            // 
-            clienteEnderecoDataGridViewTextBoxColumn.DataPropertyName = "ClienteEndereco";
-            clienteEnderecoDataGridViewTextBoxColumn.HeaderText = "ClienteEndereco";
-            clienteEnderecoDataGridViewTextBoxColumn.Name = "clienteEnderecoDataGridViewTextBoxColumn";
-            clienteEnderecoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // clienteDatNascDataGridViewTextBoxColumn
-            // 
-            clienteDatNascDataGridViewTextBoxColumn.DataPropertyName = "ClienteDatNasc";
-            clienteDatNascDataGridViewTextBoxColumn.HeaderText = "ClienteDatNasc";
-            clienteDatNascDataGridViewTextBoxColumn.Name = "clienteDatNascDataGridViewTextBoxColumn";
-            clienteDatNascDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // tlHome
             // 
@@ -371,9 +372,9 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ERP Básico";
             ((System.ComponentModel.ISupportInitialize)dgvRegistros).EndInit();
+            ((System.ComponentModel.ISupportInitialize)clienteCollectionBindingSource).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)clienteCollectionBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)funcionarioCollectionBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
