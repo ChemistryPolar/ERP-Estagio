@@ -65,10 +65,12 @@
             timerHora = new System.Windows.Forms.Timer(components);
             lblHora = new Label();
             funcionarioCollectionBindingSource = new BindingSource(components);
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvRegistros).BeginInit();
             ((System.ComponentModel.ISupportInitialize)clienteCollectionBindingSource).BeginInit();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)funcionarioCollectionBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // dgvRegistros
@@ -88,7 +90,7 @@
             dgvRegistros.Name = "dgvRegistros";
             dgvRegistros.ReadOnly = true;
             dgvRegistros.RowHeadersWidth = 51;
-            dgvRegistros.Size = new Size(895, 415);
+            dgvRegistros.Size = new Size(895, 428);
             dgvRegistros.TabIndex = 0;
             dgvRegistros.VirtualMode = true;
             // 
@@ -149,7 +151,7 @@
             // 
             btnEditar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnEditar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEditar.Location = new Point(809, 454);
+            btnEditar.Location = new Point(809, 476);
             btnEditar.Margin = new Padding(2);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(96, 24);
@@ -161,7 +163,7 @@
             // 
             btnVisualizar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnVisualizar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnVisualizar.Location = new Point(708, 454);
+            btnVisualizar.Location = new Point(708, 476);
             btnVisualizar.Margin = new Padding(2);
             btnVisualizar.Name = "btnVisualizar";
             btnVisualizar.Size = new Size(96, 24);
@@ -268,28 +270,28 @@
             // clienteToolStripMenuItem
             // 
             clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            clienteToolStripMenuItem.Size = new Size(180, 22);
+            clienteToolStripMenuItem.Size = new Size(137, 22);
             clienteToolStripMenuItem.Text = "Cliente";
             clienteToolStripMenuItem.Click += clienteToolStripMenuItem_Click;
             // 
             // fornecedorToolStripMenuItem
             // 
             fornecedorToolStripMenuItem.Name = "fornecedorToolStripMenuItem";
-            fornecedorToolStripMenuItem.Size = new Size(180, 22);
+            fornecedorToolStripMenuItem.Size = new Size(137, 22);
             fornecedorToolStripMenuItem.Text = "Fornecedor";
             fornecedorToolStripMenuItem.Click += fornecedorToolStripMenuItem_Click;
             // 
             // funcionárioToolStripMenuItem
             // 
             funcionárioToolStripMenuItem.Name = "funcionárioToolStripMenuItem";
-            funcionárioToolStripMenuItem.Size = new Size(180, 22);
+            funcionárioToolStripMenuItem.Size = new Size(137, 22);
             funcionárioToolStripMenuItem.Text = "Funcionário";
             funcionárioToolStripMenuItem.Click += funcionárioToolStripMenuItem_Click;
             // 
             // produtosToolStripMenuItem1
             // 
             produtosToolStripMenuItem1.Name = "produtosToolStripMenuItem1";
-            produtosToolStripMenuItem1.Size = new Size(180, 22);
+            produtosToolStripMenuItem1.Size = new Size(137, 22);
             produtosToolStripMenuItem1.Text = "Produtos";
             produtosToolStripMenuItem1.Click += produtosToolStripMenuItem1_Click;
             // 
@@ -297,7 +299,7 @@
             // 
             btnExcluir.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnExcluir.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnExcluir.Location = new Point(10, 454);
+            btnExcluir.Location = new Point(10, 476);
             btnExcluir.Margin = new Padding(2);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.Size = new Size(96, 24);
@@ -339,11 +341,12 @@
             // 
             lblHora.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             lblHora.AutoSize = true;
-            lblHora.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblHora.Location = new Point(184, 454);
+            lblHora.BackColor = Color.Transparent;
+            lblHora.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblHora.Location = new Point(184, 476);
             lblHora.Margin = new Padding(2, 0, 2, 0);
             lblHora.Name = "lblHora";
-            lblHora.Size = new Size(98, 25);
+            lblHora.Size = new Size(117, 29);
             lblHora.TabIndex = 7;
             lblHora.Text = "Carregando...";
             lblHora.UseCompatibleTextRendering = true;
@@ -352,12 +355,23 @@
             // 
             funcionarioCollectionBindingSource.DataSource = typeof(Models.FuncionarioCollection);
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(444, 462);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(114, 50);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 8;
+            pictureBox1.TabStop = false;
+            // 
             // tlHome
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(914, 491);
+            ClientSize = new Size(914, 513);
             ControlBox = false;
+            Controls.Add(pictureBox1);
             Controls.Add(lblHora);
             Controls.Add(btnPesquisar);
             Controls.Add(txtPesquisar);
@@ -377,6 +391,7 @@
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)funcionarioCollectionBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -417,5 +432,6 @@
         private DataGridViewTextBoxColumn clienteCPFDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn clienteEnderecoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn clienteDatNascDataGridViewTextBoxColumn;
+        private PictureBox pictureBox1;
     }
 }
