@@ -66,6 +66,7 @@
             lblHora = new Label();
             funcionarioCollectionBindingSource = new BindingSource(components);
             pictureBox1 = new PictureBox();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvRegistros).BeginInit();
             ((System.ComponentModel.ISupportInitialize)clienteCollectionBindingSource).BeginInit();
             menuStrip1.SuspendLayout();
@@ -158,6 +159,7 @@
             btnEditar.TabIndex = 1;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnVisualizar
             // 
@@ -365,12 +367,26 @@
             pictureBox1.TabIndex = 8;
             pictureBox1.TabStop = false;
             // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.Location = new Point(608, 476);
+            button1.Margin = new Padding(2);
+            button1.Name = "button1";
+            button1.Size = new Size(96, 24);
+            button1.TabIndex = 9;
+            button1.Text = "Excluir";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // tlHome
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             ClientSize = new Size(914, 513);
             ControlBox = false;
+            Controls.Add(button1);
             Controls.Add(pictureBox1);
             Controls.Add(lblHora);
             Controls.Add(btnPesquisar);
@@ -433,5 +449,6 @@
         private DataGridViewTextBoxColumn clienteEnderecoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn clienteDatNascDataGridViewTextBoxColumn;
         private PictureBox pictureBox1;
+        private Button button1;
     }
 }

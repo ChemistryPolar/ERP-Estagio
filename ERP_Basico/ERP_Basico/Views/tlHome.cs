@@ -62,18 +62,18 @@ namespace ERP_Basico
 
         private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-          //  ChamarTelaCadastro("Cliente", "Cadastrar");
+            //  ChamarTelaCadastro("Cliente", "Cadastrar");
 
         }
 
         private void fornecedorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-          //  ChamarTelaCadastro("Fornecedor", "Cadastrar");
+            //  ChamarTelaCadastro("Fornecedor", "Cadastrar");
         }
 
         private void funcionárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-          //  ChamarTelaCadastro("Funcionario", "Cadastrar");
+            //  ChamarTelaCadastro("Funcionario", "Cadastrar");
 
         }
 
@@ -123,13 +123,11 @@ namespace ERP_Basico
             if (dgvRegistros.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Nenhum item selecionado.", "Informação",
-                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return null;
             }
-            else
-            {
-                return dgvRegistros.SelectedRows[0].DataBoundItem as Cliente;
-            }
+
+            return dgvRegistros.SelectedRows[0].DataBoundItem as Cliente;
         }
 
         private void ExcluirCliente()
@@ -174,7 +172,23 @@ namespace ERP_Basico
 
         private void btnVisualizar_Click(object sender, EventArgs e)
         {
-            ChamarTelaCadastro("Visualizar", "Cliente", RecuperarCliente());
+            ChamarTelaCadastro("Cliente", "Visualizar", RecuperarCliente());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Selecionar();
+        }
+        private void Selecionar()
+        {
+            clienteSelecao = RecuperarCliente();
+            if (clienteSelecao != null)
+                this.DialogResult = DialogResult.OK;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            ChamarTelaCadastro("Cliente", "Alterar", RecuperarCliente());
         }
     }
 }

@@ -49,17 +49,19 @@ namespace ERP_Basico.Controllers
                 "Nome = @Nome, " +
                 "Email = @Email, " +
                 "Telefone = @Telefone, " +
-                "CPF = @CPF " +
-                "Endereco = @Endereco" +
-                "DataNasc = @DataNasc, " +
+                "CPF = @CPF, " +
+                "Endereco = @Endereco, " +
+                "DataNasc = @DatNasc " +
                 "WHERE IdCliente = @IdCliente";
 
+            dataBase.LimparParametros();
             dataBase.AdicionarParametros("@Nome", cliente.ClienteNome);
             dataBase.AdicionarParametros("@Email", cliente.ClienteEmail);
             dataBase.AdicionarParametros("@Telefone", cliente.ClienteTel);
             dataBase.AdicionarParametros("@CPF", cliente.ClienteCPF);
             dataBase.AdicionarParametros("@Endereco", cliente.ClienteEndereco);
             dataBase.AdicionarParametros("@DatNasc", cliente.ClienteDatNasc);
+            dataBase.AdicionarParametros("@IdCliente", cliente.IdCliente);
 
             return dataBase.ExecutarManipulacao(
                 CommandType.Text, queryAlterar);

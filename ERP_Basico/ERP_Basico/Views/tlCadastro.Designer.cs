@@ -60,6 +60,7 @@
             radioAdm = new RadioButton();
             radioFun = new RadioButton();
             btnAlterar = new Button();
+            labelId = new Label();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -230,25 +231,25 @@
             // clientecadToolStripMenuItem
             // 
             clientecadToolStripMenuItem.Name = "clientecadToolStripMenuItem";
-            clientecadToolStripMenuItem.Size = new Size(180, 22);
+            clientecadToolStripMenuItem.Size = new Size(137, 22);
             clientecadToolStripMenuItem.Text = "Cliente";
             // 
             // fornecedorcadToolStripMenuItem
             // 
             fornecedorcadToolStripMenuItem.Name = "fornecedorcadToolStripMenuItem";
-            fornecedorcadToolStripMenuItem.Size = new Size(180, 22);
+            fornecedorcadToolStripMenuItem.Size = new Size(137, 22);
             fornecedorcadToolStripMenuItem.Text = "Fornecedor";
             // 
             // funcionáriocadToolStripMenuItem
             // 
             funcionáriocadToolStripMenuItem.Name = "funcionáriocadToolStripMenuItem";
-            funcionáriocadToolStripMenuItem.Size = new Size(180, 22);
+            funcionáriocadToolStripMenuItem.Size = new Size(137, 22);
             funcionáriocadToolStripMenuItem.Text = "Funcionário";
             // 
             // produtocadToolStripMenuItem
             // 
             produtocadToolStripMenuItem.Name = "produtocadToolStripMenuItem";
-            produtocadToolStripMenuItem.Size = new Size(180, 22);
+            produtocadToolStripMenuItem.Size = new Size(137, 22);
             produtocadToolStripMenuItem.Text = "Produto";
             // 
             // btnCadastrar
@@ -347,6 +348,17 @@
             btnAlterar.TabIndex = 26;
             btnAlterar.Text = "Alterar";
             btnAlterar.UseVisualStyleBackColor = true;
+            btnAlterar.Click += btnAlterar_Click;
+            // 
+            // labelId
+            // 
+            labelId.AutoSize = true;
+            labelId.Location = new Point(296, 33);
+            labelId.Name = "labelId";
+            labelId.Size = new Size(43, 15);
+            labelId.TabIndex = 27;
+            labelId.Text = "Nome:";
+            labelId.Visible = false;
             // 
             // tlCadastro
             // 
@@ -354,6 +366,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(704, 427);
             ControlBox = false;
+            Controls.Add(labelId);
             Controls.Add(btnAlterar);
             Controls.Add(radioFun);
             Controls.Add(radioAdm);
@@ -426,5 +439,6 @@
         private RadioButton radioAdm;
         private RadioButton radioFun;
         private Button btnAlterar;
+        private Label labelId;
     }
 }

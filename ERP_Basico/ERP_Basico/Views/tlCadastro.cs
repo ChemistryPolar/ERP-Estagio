@@ -76,7 +76,7 @@ namespace ERP_Basico
                     btnAlterar.Visible = false;
                     break;
                 case ("Alterar"):
-                    btnAlterar.Visible = false;
+                    btnCadastrar.Visible = false;
                     CarregarDados();
                     break;
 
@@ -103,8 +103,24 @@ namespace ERP_Basico
             }
 
         }
+        private void Salvar()
+        {
+            int IdCliente = 0;
+            Cliente cliente = new Cliente();
+            int.TryParse(labelId.Text, out IdCliente);
+            cliente.IdCliente = IdCliente;
+            cliente.ClienteNome = txtNomeCad.Text;
+            cliente.ClienteEmail = txtEmailCad.Text;
+            cliente.ClienteTel = txtTelCad.Text;
+            cliente.ClienteCPF = txtCPFCad.Text;
+            cliente.ClienteEndereco = txtEnderecoCad.Text;
+            cliente.ClienteDatNasc = datetimepickerDatNasc.Value;
+            ClienteController clienteController = new ClienteController();
+            IdCliente = clienteController.AlterarCliente(cliente);
+        }
         private void CarregarDados()
         {
+            labelId.Text = clienteSelecionado.IdCliente.ToString();
             txtNomeCad.Text = clienteSelecionado.ClienteNome;
             txtEmailCad.Text = clienteSelecionado.ClienteEmail;
             txtTelCad.Text = clienteSelecionado.ClienteTel;
@@ -130,12 +146,12 @@ namespace ERP_Basico
 
         private void fornecedorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           // fun.ChamarTelaCadastro("Fornecedor", "Cadastrar");
+            // fun.ChamarTelaCadastro("Fornecedor", "Cadastrar");
         }
 
         private void funcionárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-          //  fun.ChamarTelaCadastro("Fornecedor", "Cadastrar");
+            //  fun.ChamarTelaCadastro("Fornecedor", "Cadastrar");
 
         }
 
@@ -144,7 +160,12 @@ namespace ERP_Basico
 
             Cadastrar("Cliente");
 
-            }
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            Salvar();
         }
     }
+}
 
