@@ -12,6 +12,7 @@ using System.Drawing.Text;
 using ERP_Basico.Models;
 using ERP_Basico.Controllers;
 
+
 namespace ERP_Basico
 {
     public partial class tlHome : Form
@@ -108,6 +109,70 @@ namespace ERP_Basico
             dgvRegistros.Update();
             dgvRegistros.Refresh();
         }
+        private void ExportarParaCSV(DataGridView dgv, string nomeArquivo)
+        {
+            const string Separador = ";";
+
+            if (dgv.Rows.Count == 0)
+            {
+                MessageBox.Show("Não há dados para exportar, faça uma pesquisa.", "Exportação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Arquivos CSV (*.csv)|*.csv";
+            sfd.FileName = nomeArquivo;
+            sfd.Title = "Salvar Registros como CSV (Separador: Ponto e Vírgula)";
+
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    StringBuilder csv = new StringBuilder();
+
+                    string header = "";
+                    for (int i = 0; i < dgv.Columns.Count; i++)
+                    {
+                        header += "\"" + dgv.Columns[i].HeaderText.Replace("\"", "\"\"") + "\"";
+
+                        if (i < dgv.Columns.Count - 1)
+                        {
+                            header += Separador;
+                        }
+                    }
+                    csv.AppendLine(header);
+
+                    foreach (DataGridViewRow row in dgv.Rows)
+                    {
+                        if (row.IsNewRow) continue;
+
+                        string line = "";
+                        for (int i = 0; i < dgv.Columns.Count; i++)
+                        {
+                            object cellValue = row.Cells[i].Value;
+                            string cellString = cellValue != null ? cellValue.ToString() : "";
+                            cellString = "\"" + cellString.Replace("\"", "\"\"") + "\"";
+
+                            line += cellString;
+
+                            if (i < dgv.Columns.Count - 1)
+                            {
+                                line += Separador;
+                            }
+                        }
+                        csv.AppendLine(line);
+                    }
+
+                    File.WriteAllText(sfd.FileName, csv.ToString(), Encoding.UTF8);
+
+                    MessageBox.Show("Dados exportados com sucesso!", "Exportação Concluída", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocorreu um erro durante a exportação: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
 
         private void toolClientes_Click(object sender, EventArgs e)
         {
@@ -189,6 +254,11 @@ namespace ERP_Basico
         private void btnEditar_Click(object sender, EventArgs e)
         {
             ChamarTelaCadastro("Cliente", "Alterar", RecuperarCliente());
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            ExportarParaCSV(dgvRegistros, "RegistrosExportados");
         }
     }
 }

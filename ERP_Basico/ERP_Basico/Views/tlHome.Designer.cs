@@ -67,6 +67,7 @@
             funcionarioCollectionBindingSource = new BindingSource(components);
             pictureBox1 = new PictureBox();
             button1 = new Button();
+            btnExport = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvRegistros).BeginInit();
             ((System.ComponentModel.ISupportInitialize)clienteCollectionBindingSource).BeginInit();
             menuStrip1.SuspendLayout();
@@ -345,7 +346,7 @@
             lblHora.AutoSize = true;
             lblHora.BackColor = Color.Transparent;
             lblHora.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblHora.Location = new Point(184, 476);
+            lblHora.Location = new Point(110, 475);
             lblHora.Margin = new Padding(2, 0, 2, 0);
             lblHora.Name = "lblHora";
             lblHora.Size = new Size(117, 29);
@@ -380,12 +381,26 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // btnExport
+            // 
+            btnExport.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnExport.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnExport.Location = new Point(334, 475);
+            btnExport.Margin = new Padding(2);
+            btnExport.Name = "btnExport";
+            btnExport.Size = new Size(96, 24);
+            btnExport.TabIndex = 10;
+            btnExport.Text = "Exportar";
+            btnExport.UseVisualStyleBackColor = true;
+            btnExport.Click += btnExport_Click;
+            // 
             // tlHome
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             ClientSize = new Size(914, 513);
             ControlBox = false;
+            Controls.Add(btnExport);
             Controls.Add(button1);
             Controls.Add(pictureBox1);
             Controls.Add(lblHora);
@@ -450,5 +465,6 @@
         private DataGridViewTextBoxColumn clienteDatNascDataGridViewTextBoxColumn;
         private PictureBox pictureBox1;
         private Button button1;
+        private Button btnExport;
     }
 }
