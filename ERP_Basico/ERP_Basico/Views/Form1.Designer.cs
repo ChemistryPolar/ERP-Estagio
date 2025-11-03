@@ -46,7 +46,7 @@
             txtSenha.Name = "txtSenha";
             txtSenha.PasswordChar = '*';
             txtSenha.Size = new Size(332, 23);
-            txtSenha.TabIndex = 0;
+            txtSenha.TabIndex = 1;
             txtSenha.UseSystemPasswordChar = true;
             // 
             // txtUser
@@ -55,7 +55,7 @@
             txtUser.Margin = new Padding(3, 2, 3, 2);
             txtUser.Name = "txtUser";
             txtUser.Size = new Size(332, 23);
-            txtUser.TabIndex = 1;
+            txtUser.TabIndex = 0;
             // 
             // label1
             // 
@@ -86,7 +86,7 @@
             btnLogin.Margin = new Padding(3, 2, 3, 2);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(82, 28);
-            btnLogin.TabIndex = 4;
+            btnLogin.TabIndex = 2;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += btnLogin_Click;
@@ -97,7 +97,7 @@
             btnSair.Location = new Point(103, 164);
             btnSair.Name = "btnSair";
             btnSair.Size = new Size(26, 15);
-            btnSair.TabIndex = 5;
+            btnSair.TabIndex = 3;
             btnSair.TabStop = true;
             btnSair.Text = "Sair";
             btnSair.LinkClicked += btnSair_LinkClicked;
