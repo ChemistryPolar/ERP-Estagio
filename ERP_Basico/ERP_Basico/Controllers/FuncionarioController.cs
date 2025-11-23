@@ -132,11 +132,11 @@ namespace ERP_Basico.Controllers
         #endregion
 
         #region PesqusiarAll
-        public FuncionarioCollection PesquisarClienteAll()
+        public FuncionarioCollection PesquisarFuncionarioAll()
         {
             FuncionarioCollection funcionarioColecao = new FuncionarioCollection();
             string query =
-                "SELECT * FROM cliente";
+                "SELECT * FROM funcionario";
 
             DataTable dataTable = dataBase.ExecutarConsulta(
                 CommandType.Text, query);

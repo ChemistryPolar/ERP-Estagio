@@ -96,19 +96,38 @@ namespace ERP_Basico
         {
             //FuncionarioController funcionarioController = new FuncionarioController();
         }
-        private void PesquisarCliente()
+        private void toolClientes_Click(object sender, EventArgs e)
         {
-
-            ClienteController clienteController = new ClienteController();
-            ClienteCollection clienteCollection = new ClienteCollection();
-
-            dgvRegistros.DataSource = null;
-            clienteCollection = clienteController.PesquisarClienteAll();
-            dgvRegistros.DataSource = clienteCollection;
-
-            dgvRegistros.Update();
-            dgvRegistros.Refresh();
+            PesquisarCliente();
         }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            ExcluirCliente();
+        }
+
+        private void btnVisualizar_Click(object sender, EventArgs e)
+        {
+            ChamarTelaCadastro("Cliente", "Visualizar", RecuperarCliente());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Selecionar();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            ChamarTelaCadastro("Cliente", "Alterar", RecuperarCliente());
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            ExportarParaCSV(dgvRegistros, "RegistrosExportados");
+        }
+        #region Funções
+
+        #region ExportarCSV
         private void ExportarParaCSV(DataGridView dgv, string nomeArquivo)
         {
             const string Separador = ";";
@@ -173,16 +192,26 @@ namespace ERP_Basico
                 }
             }
         }
+        #endregion
 
-        private void toolClientes_Click(object sender, EventArgs e)
+        #region Pesquisar
+        private void PesquisarCliente()
         {
-            PesquisarCliente();
-        }
 
-        private void btnExcluir_Click(object sender, EventArgs e)
-        {
-            ExcluirCliente();
+            ClienteController clienteController = new ClienteController();
+            ClienteCollection clienteCollection = new ClienteCollection();
+
+            dgvRegistros.DataSource = null;
+            clienteCollection = clienteController.PesquisarClienteAll();
+            dgvRegistros.DataSource = clienteCollection;
+
+            dgvRegistros.Update();
+            dgvRegistros.Refresh();
         }
+        #endregion
+
+        #region Recuperar
+
         private Cliente RecuperarCliente()
         {
             if (dgvRegistros.SelectedRows.Count == 0)
@@ -194,7 +223,20 @@ namespace ERP_Basico
 
             return dgvRegistros.SelectedRows[0].DataBoundItem as Cliente;
         }
+        #endregion
 
+        #region Selecionar
+
+        private void Selecionar()
+        {
+            clienteSelecao = RecuperarCliente();
+            if (clienteSelecao != null)
+                this.DialogResult = DialogResult.OK;
+        }
+
+        #endregion
+
+        #region Excluir
         private void ExcluirCliente()
         {
             Cliente clienteSelecionado = RecuperarCliente();
@@ -225,6 +267,9 @@ namespace ERP_Basico
                 }
             }
         }
+        #endregion
+
+        #region ChamarTela
         public void ChamarTelaCadastro(string tipo, string acao, Cliente cliente)
         {
             tlCadastro frm = new tlCadastro(tipo, acao, cliente);
@@ -234,32 +279,9 @@ namespace ERP_Basico
             if (acao != "Visualizar")
                 PesquisarCliente();
         }
+        #endregion
 
-        private void btnVisualizar_Click(object sender, EventArgs e)
-        {
-            ChamarTelaCadastro("Cliente", "Visualizar", RecuperarCliente());
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Selecionar();
-        }
-        private void Selecionar()
-        {
-            clienteSelecao = RecuperarCliente();
-            if (clienteSelecao != null)
-                this.DialogResult = DialogResult.OK;
-        }
-
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            ChamarTelaCadastro("Cliente", "Alterar", RecuperarCliente());
-        }
-
-        private void btnExport_Click(object sender, EventArgs e)
-        {
-            ExportarParaCSV(dgvRegistros, "RegistrosExportados");
-        }
+        #endregion
     }
 }
 
