@@ -41,7 +41,6 @@ namespace ERP_Basico.Controllers
         #endregion
 
         #region Alterar
-        //Método public alterar
         public int AlterarCliente(Cliente cliente)
         {
             string queryAlterar =
@@ -117,6 +116,7 @@ namespace ERP_Basico.Controllers
         }
         #endregion
 
+        #region PesquisarAll
         public ClienteCollection PesquisarClienteAll()
         {
             ClienteCollection clienteCollection = new ClienteCollection();
@@ -145,6 +145,7 @@ namespace ERP_Basico.Controllers
             }
             return clienteCollection;
         }
+        #endregion
 
     }
 }

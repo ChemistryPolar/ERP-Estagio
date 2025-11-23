@@ -13,6 +13,7 @@ namespace ERP_Basico.Models
         public string FuncionarioEmail {  get; set; }
         public string FuncionarioTel {  get; set; }
         public string FuncionarioCPF { get; set; }
+        public string FuncionarioSetor {  get; set; }
         public string FuncionarioEndereco { get; set; }
         public DateTime FuncionarioDatNasc {  get; set; }
         public string FuncionarioUser {  get; set; }

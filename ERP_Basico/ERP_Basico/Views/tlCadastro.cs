@@ -100,7 +100,30 @@ namespace ERP_Basico
                     MessageBox.Show("Cliente cadastrado com sucesso");
                     this.Close();
                     break;
+                case ("Funcionario"):
+                        Funcionario funcionario = new Funcionario();
+                    funcionario.FuncionarioNome = txtNomeCad.Text;
+                    funcionario.FuncionarioEmail = txtEmailCad.Text;
+                    funcionario.FuncionarioTel = txtTelCad.Text;
+                    funcionario.FuncionarioCPF = txtCPFCad.Text;
+                    funcionario.FuncionarioDatNasc = datetimepickerDatNasc.Value;
+                    funcionario.FuncionarioSetor = txtSetorCad.Text;
+                    if (radioFun.Checked == true )
+                    {
+                        funcionario.FuncionarioRole = "User";
+                    }else if (radioAdm.Checked == true ) {
+                        funcionario.FuncionarioRole = "Adm";
+                    }
+                        FuncionarioController fincionarioController = new FuncionarioController();
+                    int IdFuncionario = 0;
+                    IdFuncionario = fincionarioController.InserirFuncionario(funcionario);
+                    MessageBox.Show("Funcionario cadastrado com sucesso");
+                    this.Close();
+
+                    break;
             }
+
+                    
 
         }
         private void Salvar()
