@@ -364,7 +364,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(704, 427);
+            ClientSize = new Size(704, 436);
             ControlBox = false;
             Controls.Add(labelId);
             Controls.Add(btnAlterar);
@@ -398,7 +398,7 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "tlCadastro";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Novo Cadastro";
+            Text = "Novo Cadastro de Funcionário";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
