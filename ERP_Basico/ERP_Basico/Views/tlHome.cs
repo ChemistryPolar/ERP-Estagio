@@ -20,6 +20,7 @@ namespace ERP_Basico
     {
         public string Tipo = null;
         public Cliente clienteSelecao;
+        public Funcionario funcionarioSelecao;
         public tlHome(string role)
         {
             InitializeComponent();
