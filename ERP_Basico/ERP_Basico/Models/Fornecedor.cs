@@ -6,19 +6,14 @@ using System.Threading.Tasks;
 
 namespace ERP_Basico.Models
 {
-    public class Funcionario
+    public class Fornecedor
     {
-        public int IdFuncionario { get; set; }
-        public string FuncionarioNome { get; set; }
-        public string FuncionarioEmail {  get; set; }
-        public string FuncionarioTel {  get; set; }
-        public string FuncionarioCPF { get; set; }
-        public string FuncionarioSetor {  get; set; }
-        public string FuncionarioEndereco { get; set; }
-        public DateTime FuncionarioDatNasc {  get; set; }
-        public string FuncionarioUser {  get; set; }
-        public string FuncionarioPassword { get; set; }
-        public string FuncionarioRole { get; set; }
+        public int IdFornecedor { get; set; }
+        public string FornecedorNome { get; set; }
+        public string FornecedorEmail {  get; set; }
+        public string FornecedorTel {  get; set; }
+        public string FornecedorCNPJ { get; set; }
+        public string FornecedorEndereco { get; set; }
 
 
     }

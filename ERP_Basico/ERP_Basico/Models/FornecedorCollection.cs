@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ERP_Basico.Models
 {
-    public class FuncionarioCollection : List<Funcionario>
+    public class FornecedorCollection : List<Fornecedor>
     {
     }
 }

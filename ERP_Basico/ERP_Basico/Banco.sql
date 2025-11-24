@@ -37,4 +37,12 @@ CREATE TABLE [dbo].[funcionario](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) 
 GO
+CREATE TABLE [dbo].[fornecedor](
+	[IdFornecedor] [int] IDENTITY(1,1) NOT NULL,
+	[Nome] [varchar](255) NOT NULL,
+	[Email] [varchar](255) NOT NULL,
+	[Telefone] [varchar](15) NULL,
+	[cnpj] [char](11) NULL,
+	[Endereco] [varchar](255) NOT NULL,
+	 CONSTRAINT [PK_fornecedor] PRIMARY KEY CLUSTERED 
 INSERT funcionario (Nome, Email Telefone, cpf, Setor, Endereco, DataNasc, Username, Password, Role) VALUES ('Jorge', NULL, NULL, NULL, NULL, 'Casa do caralho', NULL, 'Jorge', '123', 'Admin')

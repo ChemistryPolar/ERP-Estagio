@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ERP_Basico.Controllers
 {
-    public class FuncionarioController
+    public class FornecedorController
     {
         #region Variaveis Locais
         DataBaseSqlServer dataBase = new DataBaseSqlServer();
@@ -18,61 +18,47 @@ namespace ERP_Basico.Controllers
 
         #region Inserir
 
-        public int InserirFuncionario(Funcionario funcionario)
+        public int InserirFornecedor(Fornecedor fornecedor)
         {
 
             string queryInserir =
-                "INSERT funcionario (Nome, Email, Telefone, cpf, Setor, Endereco, DataNasc, Username, Password, Role)" +
-                "VALUES (@Nome, @Email, @Telefone, @CPF, @Setor, @Endereco, @DatNasc, @Username, @Password, @Role)";
+                "INSERT funcionario (Nome, Email, Telefone, cnpj, Endereco)" +
+                "VALUES (@Nome, @Email, @Telefone, @CNPJ, @Endereco)";
 
             dataBase.LimparParametros();
 
-            dataBase.AdicionarParametros("@Nome", funcionario.FuncionarioNome);
-            dataBase.AdicionarParametros("@Email", funcionario.FuncionarioEmail);
-            dataBase.AdicionarParametros("@Telefone", funcionario.FuncionarioTel);
-            dataBase.AdicionarParametros("@CPF", funcionario.FuncionarioCPF);
-            dataBase.AdicionarParametros("@Setor", funcionario.FuncionarioSetor);
-            dataBase.AdicionarParametros("@Endereco", funcionario.FuncionarioEndereco);
-            dataBase.AdicionarParametros("@DatNasc", funcionario.FuncionarioDatNasc);
-            dataBase.AdicionarParametros("@Username", funcionario.FuncionarioUser);
-            dataBase.AdicionarParametros("@Password", funcionario.FuncionarioPassword);
-            dataBase.AdicionarParametros("@Role", funcionario.FuncionarioRole);
+            dataBase.AdicionarParametros("@Nome", fornecedor.FornecedorNome);
+            dataBase.AdicionarParametros("@Email", fornecedor.FornecedorEmail);
+            dataBase.AdicionarParametros("@Telefone", fornecedor.FornecedorTel);
+            dataBase.AdicionarParametros("@CNPJ", fornecedor.FornecedorCNPJ);
+            dataBase.AdicionarParametros("@Endereco", fornecedor.FornecedorEndereco);
 
 
             dataBase.ExecutarManipulacao(CommandType.Text, queryInserir);
             return Convert.ToInt32(dataBase.ExecutarConsultaScalar(
-                CommandType.Text, "SELECT MAX(IdFuncionario) FROM funcionario"));
+                CommandType.Text, "SELECT MAX(IdFornecedor) FROM fornecedor"));
         }
         #endregion
 
         #region Alterar
-        public int AlterarFuncionario(Funcionario funcionario)
+        public int AlterarFuncionario(Fornecedor fornecedor)
         {
             string queryAlterar =
                 "UPDATE funcionario SET " +
                 "Nome = @Nome, " +
                 "Email = @Email, " +
                 "Telefone = @Telefone, " +
-                "CPF = @CPF, " +
-                "Setor = @Setor, " +
-                "Endereco = @Endereco, " +
-                "DataNasc = @DatNasc,  " +
-                "Username = @Username, " +
-                "Password = @Passowrd, " +
-                "Role = @Role " +
-                "WHERE IdFuncionario = @IdFuncionario";
+                "CNPJ = @CNPJ, " +
+                "Endereco = @Endereco " +
+                "WHERE IdFornecedor = @IdFornecedor";
 
             dataBase.LimparParametros();
-            dataBase.AdicionarParametros("@Nome", funcionario.FuncionarioNome);
-            dataBase.AdicionarParametros("@Email", funcionario.FuncionarioEmail);
-            dataBase.AdicionarParametros("@Telefone", funcionario.FuncionarioTel);
-            dataBase.AdicionarParametros("@CPF", funcionario.FuncionarioCPF);
-            dataBase.AdicionarParametros("@Setor", funcionario.FuncionarioSetor);
-            dataBase.AdicionarParametros("@Endereco", funcionario.FuncionarioEndereco);
-            dataBase.AdicionarParametros("@DatNasc", funcionario.FuncionarioDatNasc);
-            dataBase.AdicionarParametros("@Username", funcionario.FuncionarioUser);
-            dataBase.AdicionarParametros("@Password", funcionario.FuncionarioPassword);
-            dataBase.AdicionarParametros("@Role", funcionario.FuncionarioRole);
+            dataBase.AdicionarParametros("@Nome", fornecedor.FornecedorNome);
+            dataBase.AdicionarParametros("@Email", fornecedor.FornecedorEmail);
+            dataBase.AdicionarParametros("@Telefone", fornecedor.FornecedorTel);
+            dataBase.AdicionarParametros("@CNPJ", fornecedor.FornecedorCNPJ);
+            dataBase.AdicionarParametros("@Endereco", fornecedor.FornecedorEndereco);
+            dataBase.AdicionarParametros("@IdFornecedor", fornecedor.IdFornecedor);
 
             return dataBase.ExecutarManipulacao(
                 CommandType.Text, queryAlterar);
@@ -80,14 +66,14 @@ namespace ERP_Basico.Controllers
         #endregion
 
         #region Apagar
-        public int ApagarFuncionario(int IdFuncionario)
+        public int ApagarFuncionario(int IdFornecedor)
         {
             string queryApagar =
-                "DELETE FROM funcionario " +
+                "DELETE FROM fornecedor " +
                 "WHERE IdFuncionario = @IdFuncionario";
 
             dataBase.LimparParametros();
-            dataBase.AdicionarParametros("@IdCliente", IdFuncionario);
+            dataBase.AdicionarParametros("@IdFornecedor", IdFornecedor);
 
             return dataBase.ExecutarManipulacao(
                 CommandType.Text, queryApagar);
@@ -95,11 +81,11 @@ namespace ERP_Basico.Controllers
         #endregion
 
         #region Pesquisar
-        public FuncionarioCollection PesquisarFuncionarioPorNome(string nome)
+        public FornecedorCollection PesquisarFornecedorPorNome(string nome)
         {
-            FuncionarioCollection funcionarioColecao = new FuncionarioCollection();
+            FornecedorCollection fornecedorColecao = new FornecedorCollection();
             string query =
-                "SELECT * FROM funcionario " + "WHERE nome LIKE '%' + @Nome + '%'";
+                "SELECT * FROM Fornecedor " + "WHERE nome LIKE '%' + @Nome + '%'";
 
             dataBase.LimparParametros();
             dataBase.AdicionarParametros("@Nome", nome.Trim());
@@ -109,25 +95,18 @@ namespace ERP_Basico.Controllers
 
             foreach (DataRow dataRow in dataTable.Rows)
             {
-                Funcionario funcionario = new Funcionario();
+                Fornecedor fornecedor = new Fornecedor();
 
-                funcionario.IdFuncionario = Convert.ToInt32(dataRow["IdFuncionario"]);
-                funcionario.FuncionarioNome  = Convert.ToString(dataRow["Nome"]);
-                funcionario.FuncionarioEmail = Convert.ToString(dataRow["Email"]);
-                funcionario.FuncionarioTel = Convert.ToString(dataRow["Telefone"]);
-                funcionario.FuncionarioCPF = Convert.ToString(dataRow["CPF"]);
-                funcionario.FuncionarioSetor = Convert.ToString(dataRow["Setor"]);
-                funcionario.FuncionarioEndereco = Convert.ToString(dataRow["Endereco"]);
-                funcionario.FuncionarioUser = Convert.ToString(dataRow["User"]);
-                funcionario.FuncionarioRole = Convert.ToString(dataRow["Role"]);
+                fornecedor.IdFornecedor = Convert.ToInt32(dataRow["IdFornecedor"]);
+                fornecedor.FornecedorNome = Convert.ToString(dataRow["Nome"]);
+                fornecedor.FornecedorEmail = Convert.ToString(dataRow["Email"]);
+                fornecedor.FornecedorTel = Convert.ToString(dataRow["Telefone"]);
+                fornecedor.FornecedorCNPJ = Convert.ToString(dataRow["CNPJ"]);
+                fornecedor.FornecedorEndereco = Convert.ToString(dataRow["Endereco"]);
 
-                if (!(dataRow["DataNasc"] is DBNull))
-                    funcionario.FuncionarioDatNasc =
-                        Convert.ToDateTime(dataRow["DataNasc"]);
-
-                funcionarioColecao.Add(funcionario);
+                fornecedorColecao.Add(fornecedor);
             }
-            return funcionarioColecao;
+            return fornecedorColecao;
         }
         #endregion
 
