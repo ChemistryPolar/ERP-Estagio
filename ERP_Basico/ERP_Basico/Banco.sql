@@ -45,4 +45,15 @@ CREATE TABLE [dbo].[fornecedor](
 	[cnpj] [char](11) NULL,
 	[Endereco] [varchar](255) NOT NULL,
 	 CONSTRAINT [PK_fornecedor] PRIMARY KEY CLUSTERED 
-INSERT funcionario (Nome, Email Telefone, cpf, Setor, Endereco, DataNasc, Username, Password, Role) VALUES ('Jorge', NULL, NULL, NULL, NULL, 'Casa do caralho', NULL, 'Jorge', '123', 'Admin')
+)
+GO
+CREATE TABLE [dbo].[produto](
+	[IdProduto] [int] IDENTITY(1,1) NOT NULL,
+	[Nome] [varchar](255) NOT NULL,
+	[Descricao] [varchar](255) NOT NULL,
+	[Lote] [varchar](15) NULL,
+	[Quantidade] [char](11) NULL,
+	[Peso] [varchar](255) NOT NULL,
+	 CONSTRAINT [PK_produto] PRIMARY KEY CLUSTERED 
+)
+GO
