@@ -21,10 +21,16 @@ namespace ERP_Basico.Views
             string acao = _acao;
             TelaCadastro(acao);
             Cadastrar();
-            labelCNPJ.Visible = false;
-            txtCNPJCad.Visible = false;
-            txtEmailCad.Visible = false;
-            labelEmail.Visible = false;
+            labelCPF.Visible = false;
+            txtCPFCad.Visible = false;
+            radioAdm.Visible = false;
+            radioFun.Visible = false;
+            txtUser.Visible = false;
+            txtPassword.Visible = false;
+            labelUser.Visible = false;
+            labelPassword.Visible = false;
+            txtSetorCad.Visible = false;
+            labelSetor.Visible = false;
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
         }
         public Funcionario funcionarioSelecao;
