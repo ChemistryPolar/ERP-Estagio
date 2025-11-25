@@ -41,10 +41,10 @@ namespace ERP_Basico.Controllers
         #endregion
 
         #region Alterar
-        public int AlterarFuncionario(Fornecedor fornecedor)
+        public int AlterarFornecedor(Fornecedor fornecedor)
         {
             string queryAlterar =
-                "UPDATE funcionario SET " +
+                "UPDATE fornecedor SET " +
                 "Nome = @Nome, " +
                 "Email = @Email, " +
                 "Telefone = @Telefone, " +
@@ -66,7 +66,7 @@ namespace ERP_Basico.Controllers
         #endregion
 
         #region Apagar
-        public int ApagarFuncionario(int IdFornecedor)
+        public int ApagarFornecedor(int IdFornecedor)
         {
             string queryApagar =
                 "DELETE FROM fornecedor " +
@@ -110,39 +110,31 @@ namespace ERP_Basico.Controllers
         }
         #endregion
 
-        #region PesqusiarAll
-        public FuncionarioCollection PesquisarFuncionarioAll()
+        public FornecedorCollection PesquisarFornecedorAll()
         {
-            FuncionarioCollection funcionarioColecao = new FuncionarioCollection();
+            FornecedorCollection fornecedorColecao = new FornecedorCollection();
             string query =
-                "SELECT * FROM funcionario";
+                "SELECT * FROM fornecedor";
 
             DataTable dataTable = dataBase.ExecutarConsulta(
                 CommandType.Text, query);
 
             foreach (DataRow dataRow in dataTable.Rows)
             {
-                Funcionario funcionario = new Funcionario();
+                Fornecedor fornecedor = new Fornecedor();
 
-                funcionario.IdFuncionario = Convert.ToInt32(dataRow["IdFuncionario"]);
-                funcionario.FuncionarioNome = Convert.ToString(dataRow["Nome"]);
-                funcionario.FuncionarioEmail = Convert.ToString(dataRow["Email"]);
-                funcionario.FuncionarioTel = Convert.ToString(dataRow["Telefone"]);
-                funcionario.FuncionarioCPF = Convert.ToString(dataRow["CPF"]);
-                funcionario.FuncionarioSetor = Convert.ToString(dataRow["Setor"]);
-                funcionario.FuncionarioEndereco = Convert.ToString(dataRow["Endereco"]);
-                funcionario.FuncionarioUser = Convert.ToString(dataRow["User"]);
-                funcionario.FuncionarioRole = Convert.ToString(dataRow["Role"]);
+                fornecedor.IdFornecedor = Convert.ToInt32(dataRow["IdFornecedor"]);
+                fornecedor.FornecedorNome = Convert.ToString(dataRow["Nome"]);
+                fornecedor.FornecedorEmail = Convert.ToString(dataRow["Email"]);
+                fornecedor.FornecedorTel = Convert.ToString(dataRow["Telefone"]);
+                fornecedor.FornecedorCNPJ = Convert.ToString(dataRow["CNPJ"]);
+                fornecedor.FornecedorEndereco = Convert.ToString(dataRow["Endereco"]);
 
-                if (!(dataRow["DataNasc"] is DBNull))
-                    funcionario.FuncionarioDatNasc =
-                        Convert.ToDateTime(dataRow["DataNasc"]);
 
-                funcionarioColecao.Add(funcionario);
+                fornecedorColecao.Add(fornecedor);
             }
-            return funcionarioColecao;
+            return fornecedorColecao;
         }
-        #endregion
 
     }
 }

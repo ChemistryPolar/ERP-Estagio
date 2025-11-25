@@ -33,11 +33,6 @@
             fornecedoresToolStripMenuItem = new ToolStripMenuItem();
             toolClientes = new ToolStripMenuItem();
             pedidosToolStripMenuItem1 = new ToolStripMenuItem();
-            adicionarToolStripMenuItem = new ToolStripMenuItem();
-            clienteToolStripMenuItem = new ToolStripMenuItem();
-            fornecedorToolStripMenuItem = new ToolStripMenuItem();
-            funcionárioToolStripMenuItem = new ToolStripMenuItem();
-            produtosToolStripMenuItem1 = new ToolStripMenuItem();
             btnPesquisar = new Button();
             txtPesquisar = new TextBox();
             btnExcluir = new Button();
@@ -66,6 +61,7 @@
             pedidosToolStripMenuItem = new ToolStripMenuItem();
             novoPedidoToolStripMenuItem = new ToolStripMenuItem();
             listarToolStripMenuItem = new ToolStripMenuItem();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)funcionarioCollectionBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvRegistros).BeginInit();
@@ -76,51 +72,20 @@
             // fornecedoresToolStripMenuItem
             // 
             fornecedoresToolStripMenuItem.Name = "fornecedoresToolStripMenuItem";
-            fornecedoresToolStripMenuItem.Size = new Size(180, 22);
+            fornecedoresToolStripMenuItem.Size = new Size(145, 22);
             fornecedoresToolStripMenuItem.Text = "Fornecedores";
             // 
             // toolClientes
             // 
             toolClientes.Name = "toolClientes";
-            toolClientes.Size = new Size(180, 22);
+            toolClientes.Size = new Size(145, 22);
             toolClientes.Text = "Clientes";
             // 
             // pedidosToolStripMenuItem1
             // 
             pedidosToolStripMenuItem1.Name = "pedidosToolStripMenuItem1";
-            pedidosToolStripMenuItem1.Size = new Size(180, 22);
+            pedidosToolStripMenuItem1.Size = new Size(145, 22);
             pedidosToolStripMenuItem1.Text = "Pedidos";
-            // 
-            // adicionarToolStripMenuItem
-            // 
-            adicionarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clienteToolStripMenuItem, fornecedorToolStripMenuItem, funcionárioToolStripMenuItem, produtosToolStripMenuItem1 });
-            adicionarToolStripMenuItem.Name = "adicionarToolStripMenuItem";
-            adicionarToolStripMenuItem.Size = new Size(70, 18);
-            adicionarToolStripMenuItem.Text = "Adicionar";
-            // 
-            // clienteToolStripMenuItem
-            // 
-            clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            clienteToolStripMenuItem.Size = new Size(137, 22);
-            clienteToolStripMenuItem.Text = "Cliente";
-            // 
-            // fornecedorToolStripMenuItem
-            // 
-            fornecedorToolStripMenuItem.Name = "fornecedorToolStripMenuItem";
-            fornecedorToolStripMenuItem.Size = new Size(137, 22);
-            fornecedorToolStripMenuItem.Text = "Fornecedor";
-            // 
-            // funcionárioToolStripMenuItem
-            // 
-            funcionárioToolStripMenuItem.Name = "funcionárioToolStripMenuItem";
-            funcionárioToolStripMenuItem.Size = new Size(137, 22);
-            funcionárioToolStripMenuItem.Text = "Funcionário";
-            // 
-            // produtosToolStripMenuItem1
-            // 
-            produtosToolStripMenuItem1.Name = "produtosToolStripMenuItem1";
-            produtosToolStripMenuItem1.Size = new Size(137, 22);
-            produtosToolStripMenuItem1.Text = "Produtos";
             // 
             // btnPesquisar
             // 
@@ -193,7 +158,7 @@
             // produtosToolStripMenuItem
             // 
             produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            produtosToolStripMenuItem.Size = new Size(180, 22);
+            produtosToolStripMenuItem.Size = new Size(145, 22);
             produtosToolStripMenuItem.Text = "Produtos";
             // 
             // btnExport
@@ -211,7 +176,7 @@
             // toolFuncionarios
             // 
             toolFuncionarios.Name = "toolFuncionarios";
-            toolFuncionarios.Size = new Size(180, 22);
+            toolFuncionarios.Size = new Size(145, 22);
             toolFuncionarios.Text = "Funcionários";
             toolFuncionarios.Click += toolFuncionarios_Click;
             // 
@@ -318,7 +283,7 @@
             menuStrip1.AutoSize = false;
             menuStrip1.BackColor = Color.Transparent;
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { menuToolStripMenuItem, pedidosToolStripMenuItem, listarToolStripMenuItem, adicionarToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { menuToolStripMenuItem, pedidosToolStripMenuItem, listarToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.MaximumSize = new Size(500, 50);
             menuStrip1.Name = "menuStrip1";
@@ -337,13 +302,13 @@
             // logoofToolStripMenuItem
             // 
             logoofToolStripMenuItem.Name = "logoofToolStripMenuItem";
-            logoofToolStripMenuItem.Size = new Size(109, 22);
+            logoofToolStripMenuItem.Size = new Size(180, 22);
             logoofToolStripMenuItem.Text = "Logoff";
             // 
             // sairToolStripMenuItem
             // 
             sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            sairToolStripMenuItem.Size = new Size(109, 22);
+            sairToolStripMenuItem.Size = new Size(180, 22);
             sairToolStripMenuItem.Text = "Fechar";
             // 
             // pedidosToolStripMenuItem
@@ -366,12 +331,25 @@
             listarToolStripMenuItem.Size = new Size(47, 18);
             listarToolStripMenuItem.Text = "Listar";
             // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.Location = new Point(608, 476);
+            button1.Margin = new Padding(2);
+            button1.Name = "button1";
+            button1.Size = new Size(96, 24);
+            button1.TabIndex = 22;
+            button1.Text = "Adicionar";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // tlHomeFornecedor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 513);
             ControlBox = false;
+            Controls.Add(button1);
             Controls.Add(btnPesquisar);
             Controls.Add(txtPesquisar);
             Controls.Add(btnExcluir);
@@ -398,11 +376,6 @@
         private ToolStripMenuItem fornecedoresToolStripMenuItem;
         private ToolStripMenuItem toolClientes;
         private ToolStripMenuItem pedidosToolStripMenuItem1;
-        private ToolStripMenuItem adicionarToolStripMenuItem;
-        private ToolStripMenuItem clienteToolStripMenuItem;
-        private ToolStripMenuItem fornecedorToolStripMenuItem;
-        private ToolStripMenuItem funcionárioToolStripMenuItem;
-        private ToolStripMenuItem produtosToolStripMenuItem1;
         private Button btnPesquisar;
         private TextBox txtPesquisar;
         private Button btnExcluir;
@@ -431,5 +404,6 @@
         private ToolStripMenuItem pedidosToolStripMenuItem;
         private ToolStripMenuItem novoPedidoToolStripMenuItem;
         private ToolStripMenuItem listarToolStripMenuItem;
+        private Button button1;
     }
 }

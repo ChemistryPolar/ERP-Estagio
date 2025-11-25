@@ -56,12 +56,6 @@
             label1 = new Label();
             txtNomeCad = new TextBox();
             menuStrip1 = new MenuStrip();
-            alterarTipoDeCadastroToolStripMenuItem = new ToolStripMenuItem();
-            clientecadToolStripMenuItem = new ToolStripMenuItem();
-            fornecedorcadToolStripMenuItem = new ToolStripMenuItem();
-            funcionáriocadToolStripMenuItem = new ToolStripMenuItem();
-            produtocadToolStripMenuItem = new ToolStripMenuItem();
-            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // labelId
@@ -318,44 +312,12 @@
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { alterarTipoDeCadastroToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(5, 2, 0, 2);
             menuStrip1.Size = new Size(711, 24);
             menuStrip1.TabIndex = 44;
             menuStrip1.Text = "menuStrip1";
-            // 
-            // alterarTipoDeCadastroToolStripMenuItem
-            // 
-            alterarTipoDeCadastroToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clientecadToolStripMenuItem, fornecedorcadToolStripMenuItem, funcionáriocadToolStripMenuItem, produtocadToolStripMenuItem });
-            alterarTipoDeCadastroToolStripMenuItem.Name = "alterarTipoDeCadastroToolStripMenuItem";
-            alterarTipoDeCadastroToolStripMenuItem.Size = new Size(147, 20);
-            alterarTipoDeCadastroToolStripMenuItem.Text = "Alterar Tipo de Cadastro";
-            // 
-            // clientecadToolStripMenuItem
-            // 
-            clientecadToolStripMenuItem.Name = "clientecadToolStripMenuItem";
-            clientecadToolStripMenuItem.Size = new Size(137, 22);
-            clientecadToolStripMenuItem.Text = "Cliente";
-            // 
-            // fornecedorcadToolStripMenuItem
-            // 
-            fornecedorcadToolStripMenuItem.Name = "fornecedorcadToolStripMenuItem";
-            fornecedorcadToolStripMenuItem.Size = new Size(137, 22);
-            fornecedorcadToolStripMenuItem.Text = "Fornecedor";
-            // 
-            // funcionáriocadToolStripMenuItem
-            // 
-            funcionáriocadToolStripMenuItem.Name = "funcionáriocadToolStripMenuItem";
-            funcionáriocadToolStripMenuItem.Size = new Size(137, 22);
-            funcionáriocadToolStripMenuItem.Text = "Funcionário";
-            // 
-            // produtocadToolStripMenuItem
-            // 
-            produtocadToolStripMenuItem.Name = "produtocadToolStripMenuItem";
-            produtocadToolStripMenuItem.Size = new Size(137, 22);
-            produtocadToolStripMenuItem.Text = "Produto";
             // 
             // tlCadastroFornecedor
             // 
@@ -393,8 +355,6 @@
             Controls.Add(menuStrip1);
             Name = "tlCadastroFornecedor";
             Text = "Novo Cadastro de Fornecedor";
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -429,10 +389,5 @@
         private Label label1;
         private TextBox txtNomeCad;
         private MenuStrip menuStrip1;
-        private ToolStripMenuItem alterarTipoDeCadastroToolStripMenuItem;
-        private ToolStripMenuItem clientecadToolStripMenuItem;
-        private ToolStripMenuItem fornecedorcadToolStripMenuItem;
-        private ToolStripMenuItem funcionáriocadToolStripMenuItem;
-        private ToolStripMenuItem produtocadToolStripMenuItem;
     }
 }
