@@ -34,11 +34,6 @@
             fornecedoresToolStripMenuItem = new ToolStripMenuItem();
             toolClientes = new ToolStripMenuItem();
             pedidosToolStripMenuItem1 = new ToolStripMenuItem();
-            adicionarToolStripMenuItem = new ToolStripMenuItem();
-            clienteToolStripMenuItem = new ToolStripMenuItem();
-            fornecedorToolStripMenuItem = new ToolStripMenuItem();
-            funcionárioToolStripMenuItem = new ToolStripMenuItem();
-            produtosToolStripMenuItem1 = new ToolStripMenuItem();
             btnPesquisar = new Button();
             txtPesquisar = new TextBox();
             btnExcluir = new Button();
@@ -50,6 +45,13 @@
             btnExport = new Button();
             toolFuncionarios = new ToolStripMenuItem();
             dgvRegistros = new DataGridView();
+            idClienteDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            clienteNomeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            clienteEmailDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            clienteTelDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            clienteCPFDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            clienteEnderecoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            clienteDatNascDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             clienteCollectionBindingSource = new BindingSource(components);
             btnVisualizar = new Button();
             btnEditar = new Button();
@@ -60,13 +62,6 @@
             pedidosToolStripMenuItem = new ToolStripMenuItem();
             novoPedidoToolStripMenuItem = new ToolStripMenuItem();
             listarToolStripMenuItem = new ToolStripMenuItem();
-            idClienteDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            clienteNomeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            clienteEmailDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            clienteTelDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            clienteCPFDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            clienteEnderecoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            clienteDatNascDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)funcionarioCollectionBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvRegistros).BeginInit();
@@ -103,37 +98,6 @@
             pedidosToolStripMenuItem1.Name = "pedidosToolStripMenuItem1";
             pedidosToolStripMenuItem1.Size = new Size(145, 22);
             pedidosToolStripMenuItem1.Text = "Pedidos";
-            // 
-            // adicionarToolStripMenuItem
-            // 
-            adicionarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clienteToolStripMenuItem, fornecedorToolStripMenuItem, funcionárioToolStripMenuItem, produtosToolStripMenuItem1 });
-            adicionarToolStripMenuItem.Name = "adicionarToolStripMenuItem";
-            adicionarToolStripMenuItem.Size = new Size(70, 18);
-            adicionarToolStripMenuItem.Text = "Adicionar";
-            // 
-            // clienteToolStripMenuItem
-            // 
-            clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            clienteToolStripMenuItem.Size = new Size(137, 22);
-            clienteToolStripMenuItem.Text = "Cliente";
-            // 
-            // fornecedorToolStripMenuItem
-            // 
-            fornecedorToolStripMenuItem.Name = "fornecedorToolStripMenuItem";
-            fornecedorToolStripMenuItem.Size = new Size(137, 22);
-            fornecedorToolStripMenuItem.Text = "Fornecedor";
-            // 
-            // funcionárioToolStripMenuItem
-            // 
-            funcionárioToolStripMenuItem.Name = "funcionárioToolStripMenuItem";
-            funcionárioToolStripMenuItem.Size = new Size(137, 22);
-            funcionárioToolStripMenuItem.Text = "Funcionário";
-            // 
-            // produtosToolStripMenuItem1
-            // 
-            produtosToolStripMenuItem1.Name = "produtosToolStripMenuItem1";
-            produtosToolStripMenuItem1.Size = new Size(137, 22);
-            produtosToolStripMenuItem1.Text = "Produtos";
             // 
             // btnPesquisar
             // 
@@ -248,87 +212,6 @@
             dgvRegistros.TabIndex = 11;
             dgvRegistros.VirtualMode = true;
             // 
-            // clienteCollectionBindingSource
-            // 
-            clienteCollectionBindingSource.DataSource = typeof(Models.ClienteCollection);
-            // 
-            // btnVisualizar
-            // 
-            btnVisualizar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnVisualizar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnVisualizar.Location = new Point(708, 476);
-            btnVisualizar.Margin = new Padding(2);
-            btnVisualizar.Name = "btnVisualizar";
-            btnVisualizar.Size = new Size(96, 24);
-            btnVisualizar.TabIndex = 13;
-            btnVisualizar.Text = "Visualizar";
-            btnVisualizar.UseVisualStyleBackColor = true;
-            // 
-            // btnEditar
-            // 
-            btnEditar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnEditar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEditar.Location = new Point(809, 476);
-            btnEditar.Margin = new Padding(2);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(96, 24);
-            btnEditar.TabIndex = 12;
-            btnEditar.Text = "Editar";
-            btnEditar.UseVisualStyleBackColor = true;
-            // 
-            // menuStrip1
-            // 
-            menuStrip1.AutoSize = false;
-            menuStrip1.BackColor = Color.Transparent;
-            menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { menuToolStripMenuItem, pedidosToolStripMenuItem, listarToolStripMenuItem, adicionarToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.MaximumSize = new Size(500, 50);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(5, 2, 0, 2);
-            menuStrip1.Size = new Size(500, 22);
-            menuStrip1.TabIndex = 14;
-            menuStrip1.Text = "menuStrip1";
-            // 
-            // menuToolStripMenuItem
-            // 
-            menuToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { logoofToolStripMenuItem, sairToolStripMenuItem });
-            menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            menuToolStripMenuItem.Size = new Size(50, 18);
-            menuToolStripMenuItem.Text = "Menu";
-            // 
-            // logoofToolStripMenuItem
-            // 
-            logoofToolStripMenuItem.Name = "logoofToolStripMenuItem";
-            logoofToolStripMenuItem.Size = new Size(109, 22);
-            logoofToolStripMenuItem.Text = "Logoff";
-            // 
-            // sairToolStripMenuItem
-            // 
-            sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            sairToolStripMenuItem.Size = new Size(109, 22);
-            sairToolStripMenuItem.Text = "Fechar";
-            // 
-            // pedidosToolStripMenuItem
-            // 
-            pedidosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoPedidoToolStripMenuItem });
-            pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
-            pedidosToolStripMenuItem.Size = new Size(61, 18);
-            pedidosToolStripMenuItem.Text = "Pedidos";
-            // 
-            // novoPedidoToolStripMenuItem
-            // 
-            novoPedidoToolStripMenuItem.Name = "novoPedidoToolStripMenuItem";
-            novoPedidoToolStripMenuItem.Size = new Size(143, 22);
-            novoPedidoToolStripMenuItem.Text = "Novo Pedido";
-            // 
-            // listarToolStripMenuItem
-            // 
-            listarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { toolFuncionarios, produtosToolStripMenuItem, fornecedoresToolStripMenuItem, toolClientes, pedidosToolStripMenuItem1 });
-            listarToolStripMenuItem.Name = "listarToolStripMenuItem";
-            listarToolStripMenuItem.Size = new Size(47, 18);
-            listarToolStripMenuItem.Text = "Listar";
-            // 
             // idClienteDataGridViewTextBoxColumn
             // 
             idClienteDataGridViewTextBoxColumn.DataPropertyName = "IdCliente";
@@ -378,6 +261,87 @@
             clienteDatNascDataGridViewTextBoxColumn.Name = "clienteDatNascDataGridViewTextBoxColumn";
             clienteDatNascDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // clienteCollectionBindingSource
+            // 
+            clienteCollectionBindingSource.DataSource = typeof(Models.ClienteCollection);
+            // 
+            // btnVisualizar
+            // 
+            btnVisualizar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnVisualizar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnVisualizar.Location = new Point(708, 476);
+            btnVisualizar.Margin = new Padding(2);
+            btnVisualizar.Name = "btnVisualizar";
+            btnVisualizar.Size = new Size(96, 24);
+            btnVisualizar.TabIndex = 13;
+            btnVisualizar.Text = "Visualizar";
+            btnVisualizar.UseVisualStyleBackColor = true;
+            // 
+            // btnEditar
+            // 
+            btnEditar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnEditar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnEditar.Location = new Point(809, 476);
+            btnEditar.Margin = new Padding(2);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(96, 24);
+            btnEditar.TabIndex = 12;
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = true;
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.AutoSize = false;
+            menuStrip1.BackColor = Color.Transparent;
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { menuToolStripMenuItem, pedidosToolStripMenuItem, listarToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.MaximumSize = new Size(500, 50);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Padding = new Padding(5, 2, 0, 2);
+            menuStrip1.Size = new Size(500, 22);
+            menuStrip1.TabIndex = 14;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // menuToolStripMenuItem
+            // 
+            menuToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { logoofToolStripMenuItem, sairToolStripMenuItem });
+            menuToolStripMenuItem.Name = "menuToolStripMenuItem";
+            menuToolStripMenuItem.Size = new Size(50, 18);
+            menuToolStripMenuItem.Text = "Menu";
+            // 
+            // logoofToolStripMenuItem
+            // 
+            logoofToolStripMenuItem.Name = "logoofToolStripMenuItem";
+            logoofToolStripMenuItem.Size = new Size(180, 22);
+            logoofToolStripMenuItem.Text = "Logoff";
+            // 
+            // sairToolStripMenuItem
+            // 
+            sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            sairToolStripMenuItem.Size = new Size(180, 22);
+            sairToolStripMenuItem.Text = "Fechar";
+            // 
+            // pedidosToolStripMenuItem
+            // 
+            pedidosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoPedidoToolStripMenuItem });
+            pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
+            pedidosToolStripMenuItem.Size = new Size(61, 18);
+            pedidosToolStripMenuItem.Text = "Pedidos";
+            // 
+            // novoPedidoToolStripMenuItem
+            // 
+            novoPedidoToolStripMenuItem.Name = "novoPedidoToolStripMenuItem";
+            novoPedidoToolStripMenuItem.Size = new Size(143, 22);
+            novoPedidoToolStripMenuItem.Text = "Novo Pedido";
+            // 
+            // listarToolStripMenuItem
+            // 
+            listarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { toolFuncionarios, produtosToolStripMenuItem, fornecedoresToolStripMenuItem, toolClientes, pedidosToolStripMenuItem1 });
+            listarToolStripMenuItem.Name = "listarToolStripMenuItem";
+            listarToolStripMenuItem.Size = new Size(47, 18);
+            listarToolStripMenuItem.Text = "Listar";
+            // 
             // tlHomeProduto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -413,11 +377,6 @@
         private ToolStripMenuItem fornecedoresToolStripMenuItem;
         private ToolStripMenuItem toolClientes;
         private ToolStripMenuItem pedidosToolStripMenuItem1;
-        private ToolStripMenuItem adicionarToolStripMenuItem;
-        private ToolStripMenuItem clienteToolStripMenuItem;
-        private ToolStripMenuItem fornecedorToolStripMenuItem;
-        private ToolStripMenuItem funcionárioToolStripMenuItem;
-        private ToolStripMenuItem produtosToolStripMenuItem1;
         private Button btnPesquisar;
         private TextBox txtPesquisar;
         private Button btnExcluir;
