@@ -16,55 +16,23 @@ namespace ERP_Basico
 {
     public partial class tlCadastro : Form
     {
-        Cliente clienteSelecionado;
+        Funcionario funcionarioSelecionado;
         tlHome fun = new tlHome("Admin");
-        public tlCadastro(string _tipo, string _acao, Cliente cliente)
+        public tlCadastro(string _acao, Funcionario funcionario)
         {
             InitializeComponent();
-            clienteSelecionado = cliente;
-            string tipo = _tipo;
             string acao = _acao;
-            TelaCadastro(tipo, acao);
-            Cadastrar(tipo);
+            TelaCadastro(acao);
+            Cadastrar();
+            labelCNPJ.Visible = false;
+            txtCNPJCad.Visible = false;
+            txtEmailCad.Visible = false;
+            labelEmail.Visible = false;
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
         }
-        public Cliente clienteSelecao;
-        public void TelaCadastro(string tipo, string acao)
+        public Funcionario funcionarioSelecao;
+        public void TelaCadastro(string acao)
         {
-            switch (tipo)
-            {
-                case ("funcionario"):
-                    labelCNPJ.Visible = false;
-                    txtCNPJCad.Visible = false;
-                    txtEmailCad.Visible = false;
-                    labelEmail.Visible = false;
-                    break;
-                case ("cliente"):
-                    labelCNPJ.Visible = false;
-                    txtCNPJCad.Visible = false;
-                    radioAdm.Visible = false;
-                    radioFun.Visible = false;
-                    txtUser.Visible = false;
-                    txtPassword.Visible = false;
-                    labelUser.Visible = false;
-                    labelPassword.Visible = false;
-                    txtSetorCad.Visible = false;
-                    labelSetor.Visible = false;
-                    break;
-                case ("fornecedor"):
-                    labelCPF.Visible = false;
-                    txtCPFCad.Visible = false;
-                    radioAdm.Visible = false;
-                    radioFun.Visible = false;
-                    txtUser.Visible = false;
-                    txtPassword.Visible = false;
-                    labelUser.Visible = false;
-                    labelPassword.Visible = false;
-                    txtSetorCad.Visible = false;
-                    labelSetor.Visible = false;
-                    break;
-
-            }
             switch (acao)
             {
                 case ("Visualizar"):
@@ -82,26 +50,9 @@ namespace ERP_Basico
 
             }
         }
-        private void Cadastrar(string tipo)
+        private void Cadastrar()
         {
-            switch (label9.Text)
-            {
-                case ("Cliente"):
-                    Cliente cliente = new Cliente();
-                    cliente.ClienteNome = txtNomeCad.Text;
-                    cliente.ClienteEmail = txtEmailCad.Text;
-                    cliente.ClienteTel = txtTelCad.Text;
-                    cliente.ClienteCPF = txtCPFCad.Text;
-                    cliente.ClienteEndereco = txtEnderecoCad.Text;
-                    cliente.ClienteDatNasc = datetimepickerDatNasc.Value;
-                    ClienteController clienteController = new ClienteController();
-                    int IdCliente = 0;
-                    IdCliente = clienteController.InserirCliente(cliente);
-                    MessageBox.Show("Cliente cadastrado com sucesso");
-                    this.Close();
-                    break;
-                case ("Funcionario"):
-                        Funcionario funcionario = new Funcionario();
+                    Funcionario funcionario = new Funcionario();
                     funcionario.FuncionarioNome = txtNomeCad.Text;
                     funcionario.FuncionarioEmail = txtEmailCad.Text;
                     funcionario.FuncionarioTel = txtTelCad.Text;
@@ -120,36 +71,40 @@ namespace ERP_Basico
                     MessageBox.Show("Funcionario cadastrado com sucesso");
                     this.Close();
 
-                    break;
             }
 
-                    
-
-        }
+                   
         private void Salvar()
         {
-            int IdCliente = 0;
-            Cliente cliente = new Cliente();
-            int.TryParse(labelId.Text, out IdCliente);
-            cliente.IdCliente = IdCliente;
-            cliente.ClienteNome = txtNomeCad.Text;
-            cliente.ClienteEmail = txtEmailCad.Text;
-            cliente.ClienteTel = txtTelCad.Text;
-            cliente.ClienteCPF = txtCPFCad.Text;
-            cliente.ClienteEndereco = txtEnderecoCad.Text;
-            cliente.ClienteDatNasc = datetimepickerDatNasc.Value;
-            ClienteController clienteController = new ClienteController();
-            IdCliente = clienteController.AlterarCliente(cliente);
+            int IdFuncionario = 0;
+            Funcionario funcionario = new Funcionario();
+
+            int.TryParse(labelId.Text, out IdFuncionario);
+            funcionario.IdFuncionario = IdFuncionario;
+
+            funcionario.FuncionarioNome = txtNomeCad.Text;
+            funcionario.FuncionarioEmail = txtEmailCad.Text;
+            funcionario.FuncionarioTel = txtTelCad.Text;
+            funcionario.FuncionarioCPF = txtCPFCad.Text;
+            funcionario.FuncionarioEndereco = txtEnderecoCad.Text;
+            funcionario.FuncionarioDatNasc = datetimepickerDatNasc.Value;
+
+            FuncionarioController funcionarioController = new FuncionarioController();
+
+            funcionarioController.AlterarFuncionario(funcionario);
+
+            MessageBox.Show("Funcionário alterado com sucesso");
+            this.Close();
         }
         private void CarregarDados()
         {
-            labelId.Text = clienteSelecionado.IdCliente.ToString();
-            txtNomeCad.Text = clienteSelecionado.ClienteNome;
-            txtEmailCad.Text = clienteSelecionado.ClienteEmail;
-            txtTelCad.Text = clienteSelecionado.ClienteTel;
-            txtCPFCad.Text = clienteSelecionado.ClienteCPF;
-            txtEnderecoCad.Text = clienteSelecionado.ClienteEndereco;
-            datetimepickerDatNasc.Value = clienteSelecionado.ClienteDatNasc;
+            labelId.Text = funcionarioSelecionado.IdFuncionario.ToString();
+            txtNomeCad.Text = funcionarioSelecionado.FuncionarioNome;
+            txtEmailCad.Text = funcionarioSelecionado.FuncionarioEmail;
+            txtTelCad.Text = funcionarioSelecionado.FuncionarioTel;
+            txtCPFCad.Text = funcionarioSelecionado.FuncionarioCPF;
+            txtEnderecoCad.Text = funcionarioSelecionado.FuncionarioEndereco;
+            datetimepickerDatNasc.Value = funcionarioSelecionado.FuncionarioDatNasc;
         }
         public void AtualizarMensagem(string loading)
         {
@@ -181,7 +136,7 @@ namespace ERP_Basico
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
 
-            Cadastrar("Cliente");
+            Cadastrar();
 
         }
 

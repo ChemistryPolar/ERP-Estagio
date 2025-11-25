@@ -30,7 +30,6 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(tlHomeFornecedor));
-            button1 = new Button();
             fornecedoresToolStripMenuItem = new ToolStripMenuItem();
             toolClientes = new ToolStripMenuItem();
             pedidosToolStripMenuItem1 = new ToolStripMenuItem();
@@ -74,34 +73,22 @@
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
-            // button1
-            // 
-            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            button1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(608, 476);
-            button1.Margin = new Padding(2);
-            button1.Name = "button1";
-            button1.Size = new Size(96, 24);
-            button1.TabIndex = 20;
-            button1.Text = "Excluir";
-            button1.UseVisualStyleBackColor = true;
-            // 
             // fornecedoresToolStripMenuItem
             // 
             fornecedoresToolStripMenuItem.Name = "fornecedoresToolStripMenuItem";
-            fornecedoresToolStripMenuItem.Size = new Size(145, 22);
+            fornecedoresToolStripMenuItem.Size = new Size(180, 22);
             fornecedoresToolStripMenuItem.Text = "Fornecedores";
             // 
             // toolClientes
             // 
             toolClientes.Name = "toolClientes";
-            toolClientes.Size = new Size(145, 22);
+            toolClientes.Size = new Size(180, 22);
             toolClientes.Text = "Clientes";
             // 
             // pedidosToolStripMenuItem1
             // 
             pedidosToolStripMenuItem1.Name = "pedidosToolStripMenuItem1";
-            pedidosToolStripMenuItem1.Size = new Size(145, 22);
+            pedidosToolStripMenuItem1.Size = new Size(180, 22);
             pedidosToolStripMenuItem1.Text = "Pedidos";
             // 
             // adicionarToolStripMenuItem
@@ -206,7 +193,7 @@
             // produtosToolStripMenuItem
             // 
             produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            produtosToolStripMenuItem.Size = new Size(145, 22);
+            produtosToolStripMenuItem.Size = new Size(180, 22);
             produtosToolStripMenuItem.Text = "Produtos";
             // 
             // btnExport
@@ -224,8 +211,9 @@
             // toolFuncionarios
             // 
             toolFuncionarios.Name = "toolFuncionarios";
-            toolFuncionarios.Size = new Size(145, 22);
+            toolFuncionarios.Size = new Size(180, 22);
             toolFuncionarios.Text = "Funcionários";
+            toolFuncionarios.Click += toolFuncionarios_Click;
             // 
             // dgvRegistros
             // 
@@ -349,13 +337,13 @@
             // logoofToolStripMenuItem
             // 
             logoofToolStripMenuItem.Name = "logoofToolStripMenuItem";
-            logoofToolStripMenuItem.Size = new Size(180, 22);
+            logoofToolStripMenuItem.Size = new Size(109, 22);
             logoofToolStripMenuItem.Text = "Logoff";
             // 
             // sairToolStripMenuItem
             // 
             sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            sairToolStripMenuItem.Size = new Size(180, 22);
+            sairToolStripMenuItem.Size = new Size(109, 22);
             sairToolStripMenuItem.Text = "Fechar";
             // 
             // pedidosToolStripMenuItem
@@ -384,7 +372,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 513);
             ControlBox = false;
-            Controls.Add(button1);
             Controls.Add(btnPesquisar);
             Controls.Add(txtPesquisar);
             Controls.Add(btnExcluir);
@@ -408,8 +395,6 @@
         }
 
         #endregion
-
-        private Button button1;
         private ToolStripMenuItem fornecedoresToolStripMenuItem;
         private ToolStripMenuItem toolClientes;
         private ToolStripMenuItem pedidosToolStripMenuItem1;

@@ -16,5 +16,10 @@ namespace ERP_Basico.Views
         {
             InitializeComponent();
         }
+
+        private void toolFuncionarios_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

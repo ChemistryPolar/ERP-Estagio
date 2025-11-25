@@ -89,20 +89,22 @@
             // fornecedoresToolStripMenuItem
             // 
             fornecedoresToolStripMenuItem.Name = "fornecedoresToolStripMenuItem";
-            fornecedoresToolStripMenuItem.Size = new Size(145, 22);
+            fornecedoresToolStripMenuItem.Size = new Size(180, 22);
             fornecedoresToolStripMenuItem.Text = "Fornecedores";
+            fornecedoresToolStripMenuItem.Click += fornecedoresToolStripMenuItem_Click;
             // 
             // toolClientes
             // 
             toolClientes.Name = "toolClientes";
-            toolClientes.Size = new Size(145, 22);
+            toolClientes.Size = new Size(180, 22);
             toolClientes.Text = "Clientes";
             // 
             // pedidosToolStripMenuItem1
             // 
             pedidosToolStripMenuItem1.Name = "pedidosToolStripMenuItem1";
-            pedidosToolStripMenuItem1.Size = new Size(145, 22);
+            pedidosToolStripMenuItem1.Size = new Size(180, 22);
             pedidosToolStripMenuItem1.Text = "Pedidos";
+            pedidosToolStripMenuItem1.Click += pedidosToolStripMenuItem1_Click;
             // 
             // adicionarToolStripMenuItem
             // 
@@ -206,8 +208,9 @@
             // produtosToolStripMenuItem
             // 
             produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            produtosToolStripMenuItem.Size = new Size(145, 22);
+            produtosToolStripMenuItem.Size = new Size(180, 22);
             produtosToolStripMenuItem.Text = "Produtos";
+            produtosToolStripMenuItem.Click += produtosToolStripMenuItem_Click;
             // 
             // btnExport
             // 
@@ -224,8 +227,9 @@
             // toolFuncionarios
             // 
             toolFuncionarios.Name = "toolFuncionarios";
-            toolFuncionarios.Size = new Size(145, 22);
+            toolFuncionarios.Size = new Size(180, 22);
             toolFuncionarios.Text = "Funcionários";
+            toolFuncionarios.Click += toolFuncionarios_Click_1;
             // 
             // dgvRegistros
             // 
