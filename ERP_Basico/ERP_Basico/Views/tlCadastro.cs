@@ -17,7 +17,6 @@ namespace ERP_Basico
     public partial class tlCadastro : Form
     {
         Funcionario funcionarioSelecionado;
-        tlHome fun = new tlHome("Admin");
         public tlCadastro(string _acao, Funcionario funcionario)
         {
             InitializeComponent();

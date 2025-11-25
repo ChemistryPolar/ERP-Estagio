@@ -31,15 +31,10 @@ namespace ERP_Basico.Views
             switch (role)
             {
                 case ("User"):
-                    clienteToolStripMenuItem.Visible = false;
-                    fornecedorToolStripMenuItem.Visible = false;
-                    funcionárioToolStripMenuItem.Visible = false;
-                    produtosToolStripMenuItem1.Visible = false;
                     novoPedidoToolStripMenuItem.Visible = false;
                     btnEditar.Visible = false;
                     btnExcluir.Visible = false;
                     pedidosToolStripMenuItem.Visible = false;
-                    adicionarToolStripMenuItem.Visible = false;
                     break;
                 case ("Admin"):
                     break;
@@ -96,7 +91,7 @@ namespace ERP_Basico.Views
 
         private void toolFuncionarios_Click(object sender, EventArgs e)
         {
-            //FuncionarioController funcionarioController = new FuncionarioController();
+            PesquisarFuncionario();
         }
         private void toolClientes_Click(object sender, EventArgs e)
         {

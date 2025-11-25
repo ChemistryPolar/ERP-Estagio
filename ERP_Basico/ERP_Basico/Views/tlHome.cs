@@ -1,16 +1,17 @@
-﻿using System;
+﻿using ERP_Basico.Controllers;
+using ERP_Basico.Models;
+using ERP_Basico.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
-using System.Drawing.Text;
-using ERP_Basico.Models;
-using ERP_Basico.Controllers;
 
 
 namespace ERP_Basico
@@ -21,24 +22,20 @@ namespace ERP_Basico
         public string Tipo = null;
         public Cliente clienteSelecao;
         public Funcionario funcionarioSelecao;
+        private readonly string _roleDoFuncionario;
         public tlHome(string role)
         {
             InitializeComponent();
             dgvRegistros.AutoGenerateColumns = false;
             this.MinimumSize = new Size(930, 530);
-
+            _roleDoFuncionario = role;
             switch (role)
             {
                 case ("User"):
-                    clienteToolStripMenuItem.Visible = false;
-                    fornecedorToolStripMenuItem.Visible = false;
-                    funcionárioToolStripMenuItem.Visible = false;
-                    produtosToolStripMenuItem1.Visible = false;
                     novoPedidoToolStripMenuItem.Visible = false;
                     btnEditar.Visible = false;
                     btnExcluir.Visible = false;
                     pedidosToolStripMenuItem.Visible = false;
-                    adicionarToolStripMenuItem.Visible = false;
                     break;
                 case ("Admin"):
                     break;
@@ -64,7 +61,8 @@ namespace ERP_Basico
 
         private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //  ChamarTelaCadastro("Cliente", "Cadastrar");
+            tlCadastroCliente pedidos = new tlCadastroCliente("Cadastrar", null);
+            pedidos.ShowDialog();
 
         }
 
@@ -95,7 +93,7 @@ namespace ERP_Basico
 
         private void toolFuncionarios_Click(object sender, EventArgs e)
         {
-            //FuncionarioController funcionarioController = new FuncionarioController();
+            ChamarTelaHome("Funcionario");
         }
         private void toolClientes_Click(object sender, EventArgs e)
         {
@@ -109,17 +107,17 @@ namespace ERP_Basico
 
         private void btnVisualizar_Click(object sender, EventArgs e)
         {
-            ChamarTelaCadastro("Cliente", "Visualizar", RecuperarCliente());
+            ChamarTelaCadastro("Visualizar", RecuperarCliente());
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Selecionar();
+            ChamarTelaCadastro("Cadastrar", null);
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            ChamarTelaCadastro("Cliente", "Alterar", RecuperarCliente());
+            ChamarTelaCadastro("Alterar", RecuperarCliente());
         }
 
         private void btnExport_Click(object sender, EventArgs e)
@@ -271,18 +269,59 @@ namespace ERP_Basico
         #endregion
 
         #region ChamarTela
-        public void ChamarTelaCadastro(string tipo, string acao, Cliente cliente)
+        public void ChamarTelaCadastro(string acao, Cliente cliente)
         {
-            tlCadastro frm = new tlCadastro(tipo, acao, cliente);
+            tlCadastroCliente frm = new tlCadastroCliente(acao, cliente);
             frm.ShowDialog();
-            frm.AtualizarMensagem(tipo + acao);
+            frm.AtualizarMensagem(acao);
 
             if (acao != "Visualizar")
                 PesquisarCliente();
         }
         #endregion
 
+        public void ChamarTelaHome(string tipo)
+        {
+            switch (tipo)
+            {
+                case ("Cliente"):
+                    tlHome frm = new tlHome(_roleDoFuncionario);
+                    frm.ShowDialog();
+                    break;
+                case ("Funcionario"):
+                    tlHomeFuncionario frm2 = new tlHomeFuncionario(_roleDoFuncionario);
+                    frm2.ShowDialog();
+                    break;
+                case ("Produto"):
+                    tlHomeProduto frm3 = new tlHomeProduto(_roleDoFuncionario);
+                    frm3.ShowDialog();
+                    break;
+                case ("Fornecedor"):
+                    tlHomeFornecedor frm4 = new tlHomeFornecedor(_roleDoFuncionario);
+                    frm4.ShowDialog();
+                    break;
+                case ("Pedido"):
+                    tlHomePedido frm5 = new tlHomePedido(_roleDoFuncionario);
+                    frm5.ShowDialog();
+                    break;
+            }
+        }
         #endregion
+
+        private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChamarTelaHome("Produto");
+        }
+
+        private void fornecedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChamarTelaHome("Fornecedor");
+        }
+
+        private void pedidosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

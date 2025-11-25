@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ERP_Basico.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,7 @@ namespace ERP_Basico.Views
 {
     public partial class tlCadastroCliente : Form
     {
-        public tlCadastroCliente()
+        public tlCadastroCliente(string _acao, Cliente cliente)
         {
             InitializeComponent();
         }

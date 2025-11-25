@@ -54,11 +54,6 @@
             fornecedoresToolStripMenuItem = new ToolStripMenuItem();
             toolClientes = new ToolStripMenuItem();
             pedidosToolStripMenuItem1 = new ToolStripMenuItem();
-            adicionarToolStripMenuItem = new ToolStripMenuItem();
-            clienteToolStripMenuItem = new ToolStripMenuItem();
-            fornecedorToolStripMenuItem = new ToolStripMenuItem();
-            funcionárioToolStripMenuItem = new ToolStripMenuItem();
-            produtosToolStripMenuItem1 = new ToolStripMenuItem();
             btnExcluir = new Button();
             txtPesquisar = new TextBox();
             btnPesquisar = new Button();
@@ -180,7 +175,7 @@
             menuStrip1.AutoSize = false;
             menuStrip1.BackColor = Color.Transparent;
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { menuToolStripMenuItem, pedidosToolStripMenuItem, listarToolStripMenuItem, adicionarToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { menuToolStripMenuItem, pedidosToolStripMenuItem, listarToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.MaximumSize = new Size(500, 50);
             menuStrip1.Name = "menuStrip1";
@@ -234,69 +229,37 @@
             // toolFuncionarios
             // 
             toolFuncionarios.Name = "toolFuncionarios";
-            toolFuncionarios.Size = new Size(145, 22);
+            toolFuncionarios.Size = new Size(180, 22);
             toolFuncionarios.Text = "Funcionários";
             toolFuncionarios.Click += toolFuncionarios_Click;
             // 
             // produtosToolStripMenuItem
             // 
             produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            produtosToolStripMenuItem.Size = new Size(145, 22);
+            produtosToolStripMenuItem.Size = new Size(180, 22);
             produtosToolStripMenuItem.Text = "Produtos";
+            produtosToolStripMenuItem.Click += produtosToolStripMenuItem_Click;
             // 
             // fornecedoresToolStripMenuItem
             // 
             fornecedoresToolStripMenuItem.Name = "fornecedoresToolStripMenuItem";
-            fornecedoresToolStripMenuItem.Size = new Size(145, 22);
+            fornecedoresToolStripMenuItem.Size = new Size(180, 22);
             fornecedoresToolStripMenuItem.Text = "Fornecedores";
+            fornecedoresToolStripMenuItem.Click += fornecedoresToolStripMenuItem_Click;
             // 
             // toolClientes
             // 
             toolClientes.Name = "toolClientes";
-            toolClientes.Size = new Size(145, 22);
+            toolClientes.Size = new Size(180, 22);
             toolClientes.Text = "Clientes";
             toolClientes.Click += toolClientes_Click;
             // 
             // pedidosToolStripMenuItem1
             // 
             pedidosToolStripMenuItem1.Name = "pedidosToolStripMenuItem1";
-            pedidosToolStripMenuItem1.Size = new Size(145, 22);
+            pedidosToolStripMenuItem1.Size = new Size(180, 22);
             pedidosToolStripMenuItem1.Text = "Pedidos";
-            // 
-            // adicionarToolStripMenuItem
-            // 
-            adicionarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clienteToolStripMenuItem, fornecedorToolStripMenuItem, funcionárioToolStripMenuItem, produtosToolStripMenuItem1 });
-            adicionarToolStripMenuItem.Name = "adicionarToolStripMenuItem";
-            adicionarToolStripMenuItem.Size = new Size(70, 18);
-            adicionarToolStripMenuItem.Text = "Adicionar";
-            // 
-            // clienteToolStripMenuItem
-            // 
-            clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            clienteToolStripMenuItem.Size = new Size(137, 22);
-            clienteToolStripMenuItem.Text = "Cliente";
-            clienteToolStripMenuItem.Click += clienteToolStripMenuItem_Click;
-            // 
-            // fornecedorToolStripMenuItem
-            // 
-            fornecedorToolStripMenuItem.Name = "fornecedorToolStripMenuItem";
-            fornecedorToolStripMenuItem.Size = new Size(137, 22);
-            fornecedorToolStripMenuItem.Text = "Fornecedor";
-            fornecedorToolStripMenuItem.Click += fornecedorToolStripMenuItem_Click;
-            // 
-            // funcionárioToolStripMenuItem
-            // 
-            funcionárioToolStripMenuItem.Name = "funcionárioToolStripMenuItem";
-            funcionárioToolStripMenuItem.Size = new Size(137, 22);
-            funcionárioToolStripMenuItem.Text = "Funcionário";
-            funcionárioToolStripMenuItem.Click += funcionárioToolStripMenuItem_Click;
-            // 
-            // produtosToolStripMenuItem1
-            // 
-            produtosToolStripMenuItem1.Name = "produtosToolStripMenuItem1";
-            produtosToolStripMenuItem1.Size = new Size(137, 22);
-            produtosToolStripMenuItem1.Text = "Produtos";
-            produtosToolStripMenuItem1.Click += produtosToolStripMenuItem1_Click;
+            pedidosToolStripMenuItem1.Click += pedidosToolStripMenuItem1_Click;
             // 
             // btnExcluir
             // 
@@ -377,7 +340,7 @@
             button1.Name = "button1";
             button1.Size = new Size(96, 24);
             button1.TabIndex = 9;
-            button1.Text = "Excluir";
+            button1.Text = "Cadastrar";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
@@ -439,16 +402,11 @@
         private ToolStripMenuItem menuToolStripMenuItem;
         private ToolStripMenuItem logoofToolStripMenuItem;
         private ToolStripMenuItem sairToolStripMenuItem;
-        private ToolStripMenuItem adicionarToolStripMenuItem;
-        private ToolStripMenuItem clienteToolStripMenuItem;
-        private ToolStripMenuItem fornecedorToolStripMenuItem;
-        private ToolStripMenuItem funcionárioToolStripMenuItem;
         private ToolStripMenuItem listarToolStripMenuItem;
         private ToolStripMenuItem toolFuncionarios;
         private ToolStripMenuItem produtosToolStripMenuItem;
         private ToolStripMenuItem fornecedoresToolStripMenuItem;
         private ToolStripMenuItem toolClientes;
-        private ToolStripMenuItem produtosToolStripMenuItem1;
         private TextBox txtPesquisar;
         private Button btnPesquisar;
         private ToolStripMenuItem pedidosToolStripMenuItem1;
